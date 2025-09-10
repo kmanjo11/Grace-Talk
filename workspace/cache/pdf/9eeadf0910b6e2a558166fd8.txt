@@ -1,0 +1,1094 @@
+# RFP Package - Specifications Volume 1
+
+18 MARCH 2022
+
+---
+
+
+# NOT FOR CONSTRUCTION
+
+# TABLE OF CONTENTS – VOLUME 1
+
+# DIVISION 01 — GENERAL REQUIREMENTS
+
+- 011000 ‑ Summary
+- 011400 ‑ Work Restrictions
+- 012100 ‑ SCIF
+- 012400 ‑ Options
+- 012500 ‑ Substitution Procedures
+- 012900 ‑ Payment Procedures
+- 013100 ‑ Project Management and Coordination
+- 013210 ‑ Network Analysis Schedules (NAS)
+- 013220 ‑ Photographic Documentation
+- 013300 ‑ Submittal Procedures
+- 013510 ‑ Historic Treatment Procedures
+- 013593 ‑ Archeological Discoveries
+- 013600 ‑ COBie
+- 014000 ‑ Quality Control
+- 014200 ‑ References, Definitions, and Abbreviations
+- 014500 ‑ Structural Testing and Inspection
+- 015000 ‑ Temporary Facilities and Controls
+- 015713.13 ‑ Temporary Erosion and Sedimentation Control Plan
+- 015930 ‑ Security Regulations
+- 015950 ‑ Safety and Health
+- 016000 ‑ Product Requirements
+- 017000 ‑ Execution Requirements
+- 017329 ‑ Cutting and Patching
+- 017350 ‑ Fire Prevention Precautions for Hot Work
+- 017700 ‑ Closeout Procedures
+- 017822 ‑ Operation and Maintenance Documentation
+- 017839 ‑ Project Record Documents
+- 017900 ‑ Demonstration and Training
+- 018100 ‑ Sustainable Design Reporting
+- 018100A ‑ LEED Material Content Form
+- 018113 ‑ Sustainable Design Requirements
+- 018123 ‑ Blast Performance Requirements
+- 018200 ‑ Volatile Organic Compound (VOC) Restrictions
+- 018300 ‑ Construction and Demolition Waste Management
+- 018400 ‑ Indoor Air Quality Management
+
+# DIVISION 02 — EXISTING CONDITIONS
+
+- 020185 ‑ Remediation of Buildings 56‑57
+- 023000 ‑ Subsurface Information
+- 024100 ‑ Roof Demolition and Cleanup
+
+# DIVISION 03 — CONCRETE
+
+- 030130 ‑ Maintenance of Concrete at Buildings 56 and 57
+
+GSA CISA HQ &#x26; Site Development RFP Package March 18, 2022
+
+Project No. GS11P08MKC0080 TOC ‑ 1 Table of Contents
+
+SENSITIVE BUT UNCLASSIFIED (SBU)
+
+PROPERTY OF THE UNITED STATES GOVERNMENT
+
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+---
+
+
+GSA CISA HQ &#x26; Site Development RFP Package March 18, 2022
+Project No. GS11P08MKC0080 TOC - 2 Table of Contents
+SENSITIVE BUT UNCLASSIFIED (SBU)
+PROPERTY OF THE UNITED STATES GOVERNMENT
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+# DIVISION 03 — CONCRETE
+
+- 031000 - Concrete Formwork
+- 032000 - Concrete Reinforcement
+- 033000 - Cast-In-Place Concrete
+- 033300 - Architectural Concrete
+- 033550 - Polished Concrete
+- 034513 - Architectural Precast Concrete - Terra Cotta Faced and Tinted
+- 035400 - Cast Underlayment
+
+# DIVISION 04 — MASONRY
+
+- 040100 - Maintenance Of Masonry at Bldgs 56-57
+- 042200 - Concrete Masonry Units
+- 044200 - Exterior Stone Cladding
+- 044310 - Site Stone Masonry
+- 044313 - Anchored Stone Masonry Veneer
+
+# DIVISION 05 — METALS
+
+- 051200 - Steel
+- 051250 - Architectural Exposed Structural Steel
+- 053000 - Steel Deck
+- 054000 - Cold-Formed Metal Framing
+- 055000 - Metal Fabrications
+- 057000 - Decorative Metal
+- 057310 - Site Handrails and Guardrails
+
+# DIVISION 06 — WOOD, PLASTICS, AND COMPOSITES
+
+- 060573 - Wood Treatment
+- 061000 - Rough Carpentry
+- 061600 - Sheathing
+- 062000 - Finish Carpentry
+- 064000 - Architectural Woodwork
+- 064013 - Exterior Architectural Woodwork
+
+# DIVISION 07 — THERMAL AND MOISTURE PROTECTION
+
+- 071326 - Self-Adhering Sheet Waterproofing
+- 071416 - Cold Fluid-Applied Waterproofing
+- 071418 - Cistern Waterproofing
+- 071616 - Crystalline Waterproofing
+- 071813 - Pedestrian Traffic Coatings
+- 071816 - Vehicular Traffic Coatings
+- 072110 - Facade Insulation Safing
+- 072727 - Fluid-Applied Membrane Vapor Permeable Air Barriers
+- 074113 - Standing Seam Metal Roof Panels
+- 074213.13 - Formed Metal Wall Panels
+- 074243 - Composite Metal Panel Wall Assemblies
+- 074250 - Architectural Terra Cotta
+- 075216 - SBS Modified Bituminous Membrane Roofing
+- 075510 - Protected Membrane Green Roofing
+- 075556 - Hot Fluid-Applied Protected Membrane Roofing
+- 076119 - Flat Seam Metal Roof Panels
+
+
+
+---
+
+
+NOT FOR CONSTRUCTION
+
+# GSA CISA HQ &#x26; Site Development
+
+# RFP Package
+
+# March 18, 2022
+
+# Project No. GS11P08MKC0080
+
+# TOC - 3
+
+# Table of Contents
+
+# SENSITIVE BUT UNCLASSIFIED (SBU)
+
+# PROPERTY OF THE UNITED STATES GOVERNMENT
+
+# Do not remove this notice. Properly destroy documents when no longer needed.
+
+# DIVISION 07 — THERMAL AND MOISTURE PROTECTION
+
+- 076200 - Sheet Metal Flashing and Trim
+- 077113 - Premanufactured Metal Coping and Edge Systems
+- 077200 - Roof Accessories for Bldgs 56-57
+- 078400 - Firestopping
+- 079200 - Joint Sealants
+- 079210 - Sitework Joint Sealants
+- 079250 - Interior Joint Sealants
+- 079500 - Exterior Expansion Control
+- 079513 - Interior Expansion Joint Cover Assemblies
+- 079513a - IEJ Engineering Judgment a
+- 079513b - IEJ Engineering Judgment b
+- 079513c - IEJ Engineering Judgment c
+- 079653 - Elastomeric Coatings
+
+# DIVISION 08 — OPENINGS
+
+- 081113 - Hollow Metal Doors and Frames
+- 081316 - Bullet Resistant Aluminum and Glass Doors
+- 081408 - Bullet Resistant Wood Doors
+- 081416 - Flush Wood Doors
+- 083100 - Access Panels
+- 083300 - Coiling Doors and Grilles
+- 083473 - Sound Control Security Door Assemblies
+- 084226 - All-Glass Entrances
+- 084400 - Glazed Aluminum Curtain Walls
+- 084700 - Fire-Rated Glass Wall System
+- 085114 - Interior Storefront
+- 085670 - Bullet-Resistant Aluminum Windows
+- 085673 - Sound Control Window
+- 087100 - Door Hardware
+- 087101 - Door Hardware Schedule
+- 087113.50 - Automatic Door Operators
+- 088000 - Glass Glazing
+- 088100 - Interior Glazing
+- 089000 - Louvers and Vents
+
+# DIVISION 09 — FINISHES
+
+- 090561 - Moisture Vapor Control
+- 091000 - Non-Structural Metal Framing
+- 092700 - GFRG Fabrications
+- 092900 - Gypsum Board
+- 093000 - Tiling
+- 095100 - Acoustical Ceilings
+- 095400 - Integrated Ceiling Assemblies
+- 095424 - Metal Ceiling Systems
+- 096623 - Resinous Matrix Terrazzo Flooring
+- 096723 - Resinous Flooring
+- 096800 - Carpeting
+- 097200 - Wall Coverings
+
+
+
+---
+
+
+NOT FOR CONSTRUCTION
+
+# TABLE OF CONTENTS – VOLUME 2
+
+# DIVISION 10 — SPECIALTIES
+
+- 101100 ‑ Visual Display Surfaces
+- 101400 ‑ Signage
+- 101443 ‑ Photoluminescent Markings
+- 101450 ‑ Signage Message Schedule
+- 102113 ‑ Toilet Compartments
+- 102213 ‑ Wire Mesh Partitions
+- 102219 ‑ Demountable Partitions
+- 102226 ‑ Operable Partitions
+- 102239 ‑ Vertically‑Retractable Operable Partition Wall
+- 102600 ‑ Wall and Door Protections
+- 102813 ‑ Toilet Accessories
+- 104313 ‑ Automated External Defibrillators (AED) Cabinets
+- 104400 ‑ Fire‑Protection Specialties
+- 105113 ‑ Metal Lockers
+- 105613 ‑ Metal Storage Shelving
+- 107500 ‑ Flagpoles
+- 108113 ‑ Bird Deterrent System
+- 109500 ‑ Connectivity Poles
+
+# DIVISION 11 — EQUIPMENT
+
+- 111300 ‑ Loading Dock Equipment
+- 111414 ‑ Turnstiles
+- 112423 ‑ Fall Arrest System
+- 113013 ‑ Appliances
+- 114000 ‑ Food Service Equipment
+- 115213 ‑ Projection Screens
+
+# DIVISION 12 — FURNISHINGS
+
+- 122400 ‑ Window Shades
+- 124813 ‑ Entrance Floor Mats and Frames
+- 124816 ‑ Entrance Floor Grilles
+- 126100 ‑ Fixed Audience Seating
+
+# DIVISION 13 — SPECIAL CONSTRUCTION
+
+- 133423 ‑ Pre‑engineered Guard Booth
+- 133433 ‑ Prefabricated Modular Office Trailers
+
+# DIVISION 14 — VERTICAL TRANSPORTATION
+
+- 142100 ‑ Traction Elevators
+- 144200 ‑ Vertical Platform Lift
+
+GSA CISA HQ &#x26; Site Development RFP Package March 18, 2022
+
+Project No. GS11P08MKC0080 TOC ‑ 4 Table of Contents
+
+SENSITIVE BUT UNCLASSIFIED (SBU)
+
+PROPERTY OF THE UNITED STATES GOVERNMENT
+
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+---
+
+
+NOT FOR CONSTRUCTION
+
+# TABLE OF CONTENTS – VOLUME 3
+
+# DIVISION 20 – MECHANICAL SUPPORT
+
+200000 ‑ Mechanical/Electrical Requirements
+
+# DIVISION 21 - FIRE SUPPRESSION
+
+210500 ‑ Common Work Results for Fire Suppression
+
+210553 ‑ Identification for Fire Suppression Piping and Equipment
+
+211100 ‑ Facility Fire Suppression Water Service Piping
+
+211300 ‑ Water Based Fire Suppression Systems
+
+212200 ‑ Clean‑Agent Fire‑Extinguishing Systems
+
+# DIVISION 22 - PLUMBING
+
+220500 ‑ Common Work Results
+
+220513 ‑ Common Motor Requirements
+
+220514 ‑ Common Control Panel Requirements
+
+220516 ‑ Expansion Fittings and Loops
+
+220517 ‑ Sleeves and Sleeve Seals
+
+220518 ‑ Escutcheons
+
+220519 ‑ Meters and Gauges
+
+220529 ‑ Hangers and Supports
+
+220549 ‑ Vibration Control
+
+220553 ‑ Identification for Plumbing Piping and Equipment
+
+220719 ‑ Plumbing Piping Insulation
+
+220800 ‑ Commissioning
+
+221110 ‑ Common Plumbing Piping
+
+221113 ‑ Facility Water Distribution Piping
+
+221119 ‑ Water Piping Specialties
+
+221123 ‑ Water Pumps
+
+221124 ‑ Water Packaged Booster Pumps
+
+221313 ‑ Facility Sanitary Sewers
+
+221319 ‑ Sanitary Waste Piping Specialties
+
+221329 ‑ Interior Sanitary Sewerage Pumps
+
+221413 ‑ Facility Storm Drainage Piping
+
+221423 ‑ Storm Drainage Piping Specialties
+
+223300 ‑ Electric Water Heaters
+
+224200 ‑ Commercial Plumbing Fixtures
+
+224700 ‑ Water Coolers
+
+226780 ‑ Reclaim Water System Equipment
+
+229935 ‑ Plumbing Instrumentation
+
+# DIVISION 23 - HEATING, VENTILATING, AND AIR CONDITIONING (HVAC)
+
+230500 ‑ Common Work Results for HVAC
+
+230513 ‑ Common Motor Requirements
+
+230529 ‑ Hangers and Supports
+
+230548 ‑ Vibration and Seismic Controls
+
+230553 ‑ Identification for HVAC Piping and Equipment
+
+230593 ‑ Testing Adjusting and Balancing for HVAC
+
+GSA CISA HQ &#x26; Site Development RFP Package March 18, 2022
+
+Project No. GS11P08MKC0080 TOC ‑ 5 Table of Contents
+
+SENSITIVE BUT UNCLASSIFIED (SBU)
+
+PROPERTY OF THE UNITED STATES GOVERNMENT
+
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+
+
+---
+
+
+NOT FOR CONSTRUCTION
+
+# TABLE OF CONTENTS – VOLUME 4
+
+# DIVISION 23 - HVAC
+
+- 230700 ‑ HVAC Insulation
+- 230800 ‑ Commissioning of HVAC
+- 230900 ‑ Instrumentation and Controls for HVAC
+- 232100 ‑ Hydronic Distribution Systems
+- 232500 ‑ HVAC Water Treatment
+- 232923 ‑ Variable Frequency Controllers
+- 233113 ‑ Air Distribution Systems‑Metal Duct
+- 233413 ‑ Axial HVAC Fans
+- 233416 ‑ Centrifugal HVAC Fans
+- 233423 ‑ HVAC Power Ventilators
+- 233433 ‑ Air Curtains
+- 233600 ‑ Air Terminal Units
+- 234100 ‑ Particulate Air Filtration
+- 234133 ‑ High Efficiency Particulate Filtration
+- 235700 ‑ Heat Exchangers for HVAC
+- 237314 ‑ Custom Central Station AHU
+- 238123 ‑ Computer Room Air Conditioners
+- 238216 ‑ Air Coils
+- 238219 ‑ Fan Coil Units
+- 238239.13 ‑ Cabinet Unit Heaters
+- 238239.16 ‑ Propeller Unit Heaters
+- 238239.19 ‑ Wall and Ceiling Unit Heaters
+- 238245 ‑ Chilled Beams
+
+# DIVISION 25 - INTEGRATED AUTOMATION
+
+- 250000 ‑ Integrated Automation System
+
+# DIVISION 26 - ELECTRICAL
+
+- 260500 ‑ Common Work Results
+- 260513 ‑ Medium Voltage Cables
+- 260519 ‑ Low Voltage Conductors and Cables
+- 260526 ‑ Grounding and Bonding
+- 260529 ‑ Hangers and Supports for Electrical Systems
+- 260533 ‑ Raceway and Boxes
+- 260539 ‑ Underfloor Raceways for Electrical Systems
+- 260543 ‑ Underground Ducts and Raceways
+- 260548 ‑ Vibration and Seismic Controls for Electrical Systems
+- 260553 ‑ Identification for Electrical Systems
+- 260573 ‑ Electrical System Studies and Analysis
+- 260800 ‑ Commissioning
+- 260913 ‑ Electrical Power Management System
+- 260943 ‑ Network Lighting Controls
+- 261116 ‑ Secondary Unit Substations
+- 261200 ‑ Medium Voltage Transformers
+- 261300 ‑ Medium Voltage Switchgear
+
+GSA CISA HQ &#x26; Site Development RFP Package March 18, 2022
+
+Project No. GS11P08MKC0080 TOC ‑ 6 Table of Contents
+
+SENSITIVE BUT UNCLASSIFIED (SBU)
+
+PROPERTY OF THE UNITED STATES GOVERNMENT
+
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+---
+
+
+GSA CISA HQ &#x26; Site Development RFP Package
+March 18, 2022
+Project No. GS11P08MKC0080 TOC - 7
+SENSITIVE BUT UNCLASSIFIED (SBU)
+PROPERTY OF THE UNITED STATES GOVERNMENT
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+# DIVISION 26 — ELECTRICAL
+
+- 262200 - Low Voltage Transformers
+- 262300 - Low Voltage Switchgear
+- 262413 - Switchboards
+- 262416 - Panelboards
+- 262500 - Enclosed Bus Assemblies
+- 262726 - Wiring Devices
+- 262813 - Fuses
+- 262816 - Enclosed Switches and Circuit Breakers
+- 262913 - Enclosed Controllers
+- 262923 - Variable Frequency Controllers
+- 263300 - Photovoltaics Array
+- 263323 - Central Battery Equipment
+- 263353 - Static Uninterruptible Power Supply
+- 263600 - Transfer Switches
+- 264113 - Lightning Protection for Structures
+- 264313 - Transient Voltage Suppression for Low Voltage Electrical Power Circuits
+- 265100 - Interior Lighting
+- 265600 - Exterior Lighting
+
+# DIVISION 27 — COMMUNICATIONS
+
+- 270100 - Operation and Maintenance of Communications Systems
+- 270500 - Common Work Results for Communications
+- 270526 - Grounding and Bonding for Communications Systems
+- 270529 - Hangers and Supports for Communications Systems
+- 270536 - Cable Trays for Communications Systems
+- 275119 - Electronic Sound Masking System
+
+# DIVISION 28 — ELECTRONIC SAFETY AND SECURITY
+
+- 283105 - Fire Alarm Cables and Pathways
+- 283111 - Digital Addressable Fire Alarm
+- 283133 - Two Way Radio Emergency Services
+
+# DIVISION 31 — EARTHWORK
+
+- 310913 - Geotechnical Instrumentation and Monitoring of Earthwork
+- 311000 - Site Clearing
+- 311300 - Tree Protection and Arboriculture
+- 312000 - Earth Moving
+- 312335 - Excavated Soil and Material Management
+- 313600 - Gabions
+- 315000 - Support of Excavation and Underpinning
+- 316100 - Footings
+- 316326 - Stability Caissons
+- 316329 - Caissons
+
+# DIVISION 32 — EXTERIOR IMPROVEMENTS
+
+- 321170 - Salvaged Boulders
+- 321216 - Asphalt Paving
+- 321313 - Concrete Paving
+- 321440 - Stone Paving
+
+
+
+---
+
+
+GSA CISA HQ &#x26; Site Development  RFP Package    March 18, 2022
+Project No. GS11P08MKC0080      TOC ‑ 8        Table of Contents
+SENSITIVE BUT UNCLASSIFIED (SBU)
+PROPERTY OF THE UNITED STATES GOVERNMENT
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+# NOT FOR CONSTRUCTION
+
+# DIVISION 32 — EXTERIOR IMPROVEMENTS
+
+- 321540 ‑ Stabilized Aggregate Permeable Paving
+- 321650 ‑ Metal Edging
+- 323100 ‑ Fences and Gates
+- 323223 ‑ Mechanically Stabilized Earth Retaining Walls
+- 323300 ‑ Site Furnishings
+- 324007 ‑ Active Roadway Barrier Systems
+- 328400 ‑ Planting Irrigation
+- 329115 ‑ Soil Preparation and Mixes
+- 329210 ‑ Turf and Grasses
+- 329215 ‑ Meadow Establishment
+- 329310 ‑ Exterior Planting
+- 329451 ‑ Soil Cells (SILVA CELL)
+
+# DIVISION 33 — UTILITIES
+
+- 330500 ‑ Common Work Results for Utilities
+- 333000 ‑ Site Sanitary Sewers
+- 334100 ‑ Storm Utility Drainage Piping
+- 334600 ‑ Sub‑drainage
+- 334610 ‑ Planting Drainage Systems
+
+# DIVISION 48 — MECHANICAL SITE PIPING
+
+- 480520 ‑ Piping Materials and Methods
+- 480520a ‑ Appendix A Piping Index
+- 480520b ‑ Appendix B Pipe Class Sheets
+- 488816 ‑ Piping Cleaning
+- 488819 ‑ Pressure Testing Piping
+
+
+
+---
+
+
+NOT FOR CONSTRUCTION
+
+# SECTION 011000 - SUMMARY
+
+# PART 1 ‑ GENERAL
+
+# 1.1 PROJECT IDENTIFICATION
+
+# A. Project Name and Location:
+
+St. Elizabeths West Campus
+
+Department of Homeland Security
+
+Cybersecurity and Infrastructure Security (CISA) Headquarters
+
+2701 Martin Luther King Jr., Avenue. SW
+
+Washington, DC 20032
+
+# B. Project Summary Description:
+
+The project includes but is not limited to the following Work:
+
+1. Construction of a new, Federal Office Building located on the St. Elizabeths Campus which
+will provide office space and limited parking to house the Cybersecurity and Infrastructure
+Security Agency, a component of the Department of Homeland Security in a new LEED
+Gold facility. The constructed building area of the project will include approximately
+629,595 gross square feet above and below grade.
+1. Under the Base Bid, the project shall consist of shell, core, tenant fit out, historic
+structures stabilization and utility connections as shown on the Drawings. The work
+includes site work, site preparation, stabilization and monitoring of historic structures
+and construction of all elements of the building core, shell and tenant interiors
+required to provide DHS with finished interior tenant space.
+2. Under the Base Bid, project responsibilities for the Contractor include construction
+of the landscape and civil engineering elements surrounding the building, implementation
+of security measures as required by DHS and FPS for the site and non-Tenant Improvement
+portions of the project, and consultation with the multiple consultation parties and federal
+regulators required to gain final approval to construct the project.
+3. The Project may include Options. Refer to Division 01 Section “01 2400 OPTIONS”
+associated with the historic structures, Building 56, 57 and the Smokestacks.
+
+# C. Project Delivery Method:
+
+Design / Bid/Build. The project includes, but is not limited to construction and commissioning, hereinafter referred to as the Work:
+
+# D. The Contracting Officer for the project is:
+
+Bonnie E. Echoles
+
+GSA, Office of Acquisition (WPHBA)
+
+St Elizabeths West Campus Project Office
+
+2701 Martin Luther King Avenue, SE
+
+Building 37A
+
+Washington, DC 20032
+
+GSA CISA HQ &#x26; Site Development    RFP Package    March 18, 2022
+
+Project No. GS11P08MKC0080         011000 ‑ 1    Summary
+
+SENSITIVE BUT UNCLASSIFIED (SBU)
+
+PROPERTY OF THE UNITED STATES GOVERNMENT
+
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+
+---
+
+
+NOT FOR CONSTRUCTION
+
+# 1.2 WORK SEQUENCE, DURATIONS, TARGET DATES AND DELIVERABLES
+
+# A. Work Sequence:
+
+The Contractor shall schedule the work, taking into account the following constraints on work sequencing:
+
+1. Fast tracking is allowed, but all design must be completed and approved by the Contracting Officer (CO) prior to the initiation of construction on any individual element of the work.
+2. Work of other contractors performing related work.
+3. Unplanned suspension of the Work by the CO.
+
+# B. Construction and Commissioning Durations:
+
+See Request For Proposal issued by the Government.
+
+# C. All work in telecommunication spaces:
+
+All work in telecommunication spaces, including but not limited to, painting, floor finishes, air conditioning, lighting, fire protection, fire alarm, emergency power, installation of cable trays and final cleaning activities, in addition to all telecom and security systems must be completed sixty (60) calendar days prior to substantial completion so that the Government can take beneficial occupancy of the telecommunication spaces to perform functional and security testing for all secured areas located in the facility.
+
+# 1.3 WORK UNDER OTHER CONTRACTS
+
+# A. Coordinate Work With Other Contractors:
+
+The Contractor shall cooperate with other contractors performing related work, including but not limited to the Governments Security Integrator, DHS Security Division, and Deployment, Furnishing and Moving Contractors. The Contractor shall provide labor, materials and other costs necessary to satisfactorily coordinate the Contract Work (Work) with work performed under other contracts. Coordinated with IT, AV and security vendors as well as the DHS furniture vendor.
+
+# B. Other work in the immediate vicinity of the site and on the St. Elizabeths Campus:
+
+The Contractor shall cooperate with other contractors performing work on other nearby projects. The Contractor shall plan for and take into account the impact of these nearby projects on site access and construction operations.
+
+1. Protect work previously installed, as indicated on the drawings, prior to Construction Notice to Proceed unless noted to be modified by these Drawings.
+
+# 1.4 GOVERNMENT ACTIONS
+
+# A. Government Installed Equipment:
+
+The Government reserves the right to place and install equipment in completed or partially completed areas of the building prior to Substantial Completion, provided such installation does not interfere with Contractor’s ongoing operations or the completion of the Work. The Government's installation of equipment shall not constitute acceptance of the total Work provided by the Contractor.
+
+# B. The Government reserves the right to accept select completed portions of the Work:
+
+1. Prior to Government’s acceptance of any select completed portions of the work, the mechanical, plumbing and electrical, telecommunications and security infrastructure systems for the space shall be fully operational, required inspections complete, all documentation.
+
+GSA CISA HQ &#x26; Site Development RFP Package March 18, 2022
+
+Project No. GS11P08MKC0080 011000 ‑ 2 Summary
+
+SENSITIVE BUT UNCLASSIFIED (SBU)
+
+PROPERTY OF THE UNITED STATES GOVERNMENT
+
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+---
+
+
+# GSA CISA HQ &#x26; Site Development
+
+# RFP Package
+
+# March 18, 2022
+
+# Project No. GS11P08MKC0080
+
+# Summary
+
+NOT FOR CONSTRUCTION
+
+Submitted and commissioning test and startup operations successfully completed and accepted by the Government. All architectural treatments including, but not limited to, carpet, painting, ceiling finishes, doors, finish hardware, window treatments, and MEP/FP equipment shall be installed. A punch list of outstanding uncompleted items will be furnished for each space accepted. Upon an acceptance date agreed to by the Government, the Government assumes operational control and maintenance of mechanical and electrical systems serving the accepted areas of the building.
+
+1. Upon an acceptance date agreed to by the Government, the Government will assume responsibility for maintenance and custodial service for the accepted portions of the building together with the building systems serving them.
+2. The warranty period for a portion of the building accepted as substantially complete together with any supporting building systems will commence on the date of Substantial Completion issued by the Government.
+
+# Substantial Completion and Acceptance by the Government:
+
+1. Prior to the Government’s acceptance of Substantial Completion of the contract scope of work, all spaces, mechanical, plumbing and electrical, telecommunications and security infrastructure systems for the space shall be fully operational, required inspections complete, all documentation submitted and commissioning, testing and startup operations successfully completed and accepted by the Government. All architectural treatments including, but not limited to, carpet, painting, ceiling finishes, doors, finish hardware, window treatments, and MEP/FP equipment shall be installed. A punch list of outstanding uncompleted items will be furnished for each space accepted. Upon a date agreed to by the Government, the Government assumes operational control and maintenance of mechanical and electrical systems serving the accepted areas of the building.
+2. All fire and life safety systems shall be accepted as complete and operable by the Government prior to Substantial Completion.
+3. Upon an acceptance date agreed to by the Government, the Government will assume responsibility for maintenance and custodial service for the scope along with the building systems serving them if not prior accepted.
+4. The warranty period for a portion of the building accepted as partially complete together with any supporting building systems deemed substantially complete will commence on the date of Substantial Completion as issued by the Government.
+
+# 1.5 INSPECTION BY OTHER AUTHORITIES
+
+# A. Inspection by other Authorities:
+
+This project is subject to inspection by the following: OSHA, EPA, GSA, DDOT, Department of Energy &#x26; Environment (DOEE), United States Secret Service (USSS), Historic Preservation Office (HPO), DHS Physical Security, DHS Project Management Team, DHS OCSO, DHS TEMPEST Personnel, DHS Federal Protective Service and the Government’s Construction Manager (CM).
+
+# B. Commissioning Agent:
+
+The Commissioning Agent (CxA) selected for this project by the Government.
+
+SENSITIVE BUT UNCLASSIFIED (SBU)
+
+PROPERTY OF THE UNITED STATES GOVERNMENT
+
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+
+
+---
+
+
+NOT FOR CONSTRUCTION
+
+# 1.6 SIGNIFICANT WORK PROVISIONS
+
+# A. Partnering Sessions
+
+The Contractor shall attend a series of no fewer than three (3) partnering sessions as a part of this project. Each meeting shall be conducted by an approved Facilitator contracted by the Construction Manager. Partnering is a program whose value depends on the commitment made to it by the Contractor, the Government, and other involved parties. The conduct of the partnering meetings shall meet the following requirements:
+
+1. Purpose: The purpose of the workshops is to develop a businesslike, cooperative relationship between the Contractor and the Government, including tenant agencies. The meetings will be based on the development of common goals for the Government and the Contractor, an approach to the job and a method of operations that will foster joint solutions and maintain good working relationships and facilitate problem-solving between the parties. It is the intent of the Government that an alternate dispute resolution process be established as a part of the partnering meeting and agreement in order to encourage both parties to resolve potential disputes in a constructive manner and to avoid litigation whenever possible.
+2. Frequency: The first workshop session shall be conducted within forty-five (45) calendar days after the date of the issuance of the NTP and it shall be a one (1) day workshop of approximately eight (8) hours. Follow-up partnering sessions (minimum two) of equal duration will be coordinated with the Government and will be attended primarily by the on-site project personnel of both the Government and the Contractor.
+3. Attendance: The following persons will attend the partnering sessions:
+1. The Contractor's principal, project manager, superintendent, project-related personnel, and major subcontractors;
+2. The GSA Contracting Officer, Contracting Specialist, Contracting Officer’s Representative, and Project Managers;
+3. The CMa's Project Manager, Quality and others who are closely related to the project;
+4. The DHS Project Manager and other personnel closely related to the project;
+5. Representatives from other affected government parties, as appropriate.
+4. Location: The first workshop will be conducted away from the project site and GSA Regional Office, at a location to be arranged by the Contractor. Meetings during construction will be conducted in space near the project site. The cost for the facilities and working lunches for these workshops will be included in the base bid proposal.
+
+# B. Work in Existing Conditions
+
+Work included in the contract documents shall correspond in all respects with the existing conditions to which it connects, or to similar existing conditions, in materials, workmanship and finish whichever is of higher quality.
+
+GSA CISA HQ &#x26; Site Development    RFP Package    March 18, 2022
+
+Project No. GS11P08MKC0080         011000 ‑ 4    Summary
+
+SENSITIVE BUT UNCLASSIFIED (SBU)
+
+PROPERTY OF THE UNITED STATES GOVERNMENT
+
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+
+---
+
+
+GSA CISA HQ &#x26; Site Development RFP Package March 18, 2022
+Project No. GS11P08MKC0080
+
+# C. Alterations to Existing Conditions
+
+Existing conditions shall be cut, drilled, removed, temporarily removed, or removed and replaced, as necessary for performance of Work as per the contract documents.
+
+1. Replacement of existing conditions that are removed shall match similar existing conditions.
+2. Unless indicated on the construction documents and prior approval has been received by the CO, existing structural members shall not be cut or altered without authorization.
+3. Conditions that are to remain in place, which are damaged or defaced during the Work, shall be restored to the condition existing at time of Constructor’s access to the Work for destructive and other investigation as determined and accepted by the Government.
+4. Discolored or unfinished surfaces exposed by removal of existing conditions, that are indicated to be final exposed surfaces, shall be refinished or replaced as necessary to produce uniform and harmonious contiguous surfaces.
+5. Contractor shall submit a plan for approval to GSA and DHS to make any required modifications to the existing Campus Level V Security Fence required to access and complete Work, as the fence currently incorporates a portion of the Center Building Structure. All required fence modifications shall be part of the Contractor’s Base Bid and must be coordinated with the DHS OCSO Security Division and the Contracting Officer a minimum of seven (7) days prior to starting modifications. See Division 01 Section “Security Regulations.”
+
+# D. Existing Conditions or As-Built Conditions
+
+The Contractor must understand and acknowledge that the Drawings provided by the A/E may not exactly depict the existing “as constructed conditions” to which the Contractor must work with, interface, and connect to. The Contractor should anticipate adjustments to the Work and will perform these adjustments at no additional cost to the Government.
+
+# E. Existing Utilities
+
+The Contractor shall identify, locate, document and assure utility services (including telecommunications and data services) to the other buildings and facilities that constitute the St. Elizabeths West Campus (both inside and outside the work area) are not interrupted in the course of the work. All scheduled outages and or interruptions shall be fully coordinated in advance and approved in writing by the CO a minimum of five (5) working days in advance. Due to the nature of governmental functions performed, the importance of maintaining these services cannot be over emphasized. Failure to comply with this requirement may result in the removal of key personnel from the site and the exercise of other appropriate contractual actions by the Government, including full or partial termination of the contract. Existing utilities outside the building footprint shall be located by the Contractor and shall not be disturbed by the Contractor’s hoisting, bracing, mobile equipment or other equipment and stored materials on Government property. Contractor shall immediately remove any equipment or stored material that interferes with ongoing operations in the St. Elizabeths West Campus.
+
+# F. LEED Green Building Program for New Construction
+
+The GSA requires the project to obtain a minimum of LEED (2009) Gold level certification with the USGBC but using the ASHRAE 2013 baseline for energy performance. The A/E, as part of the Drawings, included measures and identified the system prerequisites the Contractor must implement during the construction process in order to earn the award level defined by the Drawings. See Division 01 Section “Sustainable Design and Construction” for further details.
+
+Summary SENSITIVE BUT UNCLASSIFIED (SBU) PROPERTY OF THE UNITED STATES GOVERNMENT
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+
+---
+
+
+# G. Hazardous Materials
+
+Hazardous material abatement and containment shall be performed where necessary by the Contractor to complete the Work. The Contractor shall conduct its own survey to support its construction requirements. The amount of and the extent of information contained in the Government’s survey is provided for information only.
+
+# H. Historic Preservation
+
+The GSA is committed to maintain and enhance the historic landmark nature of the existing NHL buildings and landscape of the St Elizabeths West Campus surrounding the project site, including but not limited to the Center Building, Creamery, and Building 49, Historic Smokestacks, Ice House (Building 52), Power Station (Buildings 56./57) and Building 64. Refer to the Drawings and Division 02 Section “Demolition, Historic Removal And Dismantling” for additional requirements. The Contractor is required to comply fully with those requirements.
+
+# I. Materials on the Site
+
+Materials and equipment (except where otherwise noted) that are removed/demolished during this phase of the Work and not re‑used under this contract shall be removed from the jobsite and properly disposed by the Contractor.
+
+# J. Government Ownership of Items Removed from the Site
+
+Removed items indicated to remain the property of the Government shall be stored in a location as directed by the CO.
+
+# K. Landscaping
+
+The Contractor is responsible for maintaining all existing landscaping on site from the time the date of Notice to Proceed for Construction until Substantial Completion and Acceptance of the Work by the Government as indicated in the contract documents.
+
+1. All landscaping that is disturbed by construction activities shall be replaced in kind prior to Substantial Completion and Acceptance of the Work. Shrubs and bushes that are damaged or removed shall be replaced with specimens of the same species and size. Damaged lawn areas shall be restored with sod of a grass of the same species or of a similar cultivar acceptable to the CO.
+2. Trees shall not be removed or damaged during construction unless specifically identified in the Drawings. Special care shall be taken to assure proper watering, pruning, and care of trees on site. The Contractor shall not disturb the root structure of any trees in any area underneath the canopy out to the drip line. Refer to Division 01 Section “Temporary Tree and Plant Protection”.
+
+# L. Permits
+
+The Contractor shall be responsible for obtaining any necessary permits from the District of Columbia, such as an environmental and storm‑water permit as required by the DOEE or a public space permit for work outside the Campus boundary, as required to complete Work. The ability to obtain permits may be affected by other work adjacent to work being performed by the Contractor. The CO will work with the Contractor to resolve issues related to other work being performed so as to not impact the Contractor’s ability to perform its work. Permit activities shall be conducted in collaboration with FAR 52.236‑7.
+
+1. Contractor shall obtain coverage under the Construction General Permit (CGP), issued by the EPA. Coverage under the CGP is required prior to any land disturbance onsite. Contractor shall furnish all information and certifications that are required to comply with permit process and permit requirements.
+2. Contractor is considered the “operator” under the permit and has extensive responsibility for compliance with permit requirements. Contractor shall maintain conformance with all.
+
+
+
+---
+
+
+NOT FOR CONSTRUCTION
+
+# CGP criteria for the entire project.
+
+The CGP shall be transferred from the Government to the Contractor if the permit has been issued prior to bid. The apparent low bidder, Contractor, and affected subcontractors shall furnish all information and certifications that are required to comply with the permit process and permit requirements.
+
+1. Contractor is responsible for filing a Transfer of Ownership agreement if the site operator changes during construction.
+2. Contractor shall pay all fees associated with obtaining and maintain coverage under the CGP.
+3. A partially completed Stormwater Pollution Prevention Plan (SWPPP) has been prepared by the engineer of record. Contractor is responsible for completing the SWPPP and keeping the SWPPP up to date throughout construction.
+4. Many of the CGP requirements will be satisfied by completing construction as shown and specified. Some requirements involve the Contractor’s method of operations and operations planning. The Contractor is responsible for employing best management practices. The affected activities often include, but are not limited to the following:
+1. Designating areas for equipment maintenance and repair;
+2. Provide waste receptacles at convenient locations and provide regular collection of wastes;
+3. Locating equipment wash down areas onsite and provide appropriate control of wash-waters;
+4. Providing storage areas for chemicals, paints, solvents, fertilizers, and other potentially toxic materials;
+5. Providing adequately maintained sanitary facilities.
+5. Contractor shall submit the Notice of Termination (NOT) for the Construction General Permit within 30 days of completion of all NOT criteria and approval of the as-built engineering drawings and as-built certification by DOEE.
+
+# Ceremonies and Site Tours:
+
+Subject to mutually satisfactory arrangements between the parties of the contract, the Government may enter the premises during the term of the contract to conduct ceremonies and site tours, and to occupy temporarily such portions of the premises as may be necessary.
+
+# Project Information:
+
+Contractor, subcontractors, consultants and sub-consultants are prohibited from discussing all aspects of the Work with the media or other persons not associated with the Work.
+
+1. All requests for information from the media or other persons not associated with the Project shall be directed to the CO.
+2. All Contractor personnel (including subcontractors and consultants) engaged to work on the project will be required to sign certificates of non-disclosure and to comply fully with Division 01 Section “Security Regulations”.
+3. Any and all references to the Work in Contractor promotional material must be pre-approved by the CO.
+
+# Geotechnical Work.
+
+See Contract Documents for details of existing Geotechnical work performed by the A/E Team. Contractor is to employ its own Geotechnical Engineer to perform additional survey work to support its design and construction.
+
+GSA CISA HQ &#x26; Site Development RFP Package March 18, 2022
+
+Project No. GS11P08MKC0080 011000 - 7 Summary
+
+SENSITIVE BUT UNCLASSIFIED (SBU)
+
+PROPERTY OF THE UNITED STATES GOVERNMENT
+
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+
+---
+
+
+NOT FOR CONSTRUCTION
+
+# Electrical/Telecommunications/Physical Security Systems
+
+The Contractor shall provide infrastructure indicated on the “Security Planning Guide: Responsibility Matrix” and coordinate with the Governments Security Integrator, DHS Security and DHS Furnishing Contractors. See West Addition Drawings, Volume 1 Design Narratives. The Contractor shall provide scheduling and coordinate these activities with its overall schedule. See Division 01 Section “Design‑Build Network Analysis Schedules.”
+
+# Compliance with P120, Public Building Service Cost and Schedule Management Policy Requirements
+
+The Contractor shall comply with the P120 during construction of the project.
+
+# PART 2 - PRODUCTS (NOT APPLICABLE)
+
+# PART 3 - EXECUTION (NOT APPLICABLE)
+
+END OF SECTION 011000
+
+GSA CISA HQ &#x26; Site Development RFP Package March 18, 2022
+
+Project No. GS11P08MKC0080 011000 - 8 Summary
+
+SENSITIVE BUT UNCLASSIFIED (SBU)
+
+PROPERTY OF THE UNITED STATES GOVERNMENT
+
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+---
+
+
+NOT FOR CONSTRUCTION
+
+# SECTION 011400 - WORK RESTRICTIONS
+
+# PART 1 ‑ GENERAL
+
+# 1.1 CONTRACTOR USE OF PREMISES
+
+A. Pre‑Construction Survey: The Contracting Officer (CO) will conduct a pre‑construction survey
+with the Contractor to review and document the existing conditions surrounding the project
+premises prior to the beginning of any construction activity. The Contractor shall provide
+documentation to the CO prior to the commencement of any construction activity. Refer to
+Division 01 Section “Photographic Documentation”.
+
+B. Historic Preservation Coordination: Attention shall be paid to, and Work shall progress within
+the boundaries of among others, the Secretary of the Interior’s Standards for the Treatment of
+Historic Properties (Washington, U. S. Department of the Interior, 1995), with Guidelines for
+Preserving, rehabilitating, restoring and reconstructing Historic Buildings. Division 01 Section
+“Historic Treatment Procedures” details the requirements that the Contractor shall adhere to in
+implementing historic preservation requirements.
+
+C. Contractor Use of Premises: During the construction period, the Contractor shall have use of the
+premises for construction operations, including full use of the indicated work site, limited only
+by the Government's right to perform work, retain other contractors to perform work on portions
+of the project, or prohibit the Contractor from working in specific areas that are to be occupied
+by the Government.
+
+D. The Contractor shall limit use of the premises to the work within site limit of work as indicated,
+to allow for Government occupancy and other controlled use of the surrounding St. Elizabeths
+Campus.
+
+1. Confine operations at the site to areas indicated. Do not disturb portions of the site beyond the
+areas in which Work is indicated by the Contract Documents. Comply with requirements of Site
+Utilization Plan. See related requirements in Division 01 Section “Temporary Facilities and
+Controls”.
+2. Keep driveways and entrances serving the premises clear and available at all times to the
+Government, Government employees and to visitors. Do not use these areas for parking or
+storage of materials.
+3. Schedule deliveries to minimize space and time requirements for storage of material and
+equipment on site.
+4. Maintain the site and existing adjacent buildings in a safe and weather‑tight condition
+throughout the construction period from the time of Contractor’s Date of Notice to Proceed for
+Construction until Substantial Completion. Repair damage caused by construction operations to
+the satisfaction of the government. Take precautions to protect the site, adjacent buildings,
+their occupants and the public during the construction period from all hazards arising from the
+work during the construction period. A representative of the Contractor shall be available to
+arrive on site within one (1) hour of notice should an emergency occur.
+
+GSA CISA HQ &#x26; Site Development RFP Package March 18, 2022 Project No. GS11P08MKC0080 011400 ‑ 1 WorkRestrictions
+SENSITIVE BUT UNCLASSIFIED (SBU) PROPERTY OF THE UNITED STATES GOVERNMENT
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+
+---
+
+
+NOT FOR CONSTRUCTION
+
+# E. Access to the Site
+
+Location of Contractor’s access to site is delineated in the Site Utilization Plan and may be relocated during the course of the Work. CO will work with the Contractor to minimize the effect of relocating the access points for material, equipment and personnel ingress and egress.
+
+# F. Equipment and Delivery Schedules
+
+Coordinate scheduling of all deliveries with the CO. Means, methods, locations and times of deliveries will conform to the requirements of Division 01 Section 01 “Security Regulations” and are subject to the Government approval.
+
+# G. Material Deliveries
+
+1. Outside of GOV Level V perimeter: Materials and vehicles entering the unsecured side of the Campus shall enter through Gates 1 or 2, as directed by the CO. Vehicles may be screened prior to entering the Campus by local gate guards. Vehicle Drivers must be approved to enter the campus prior to arrival as defined in Division 01 Section “Security Regulations”.
+2. Inside the GOV Level V perimeter: Materials and vehicles requiring access to the Level V portion of the Campus shall be screened at the off-site Vehicle Screening Facility located at 2ⁿᵈ and C Streets and given clearance to access the Campus. Screened vehicles shall proceed to Gate 6 to enter the Campus. Vehicle Drivers must be approved to enter the campus prior to arrival as defined in Division 01 Section “Security Regulations”.
+
+# H. Traffic Control Officers
+
+Contractor shall provide a minimum of two (2) traffic control officers at locations to be determined by the CO when construction operations are conducted. Contractor shall coordinate all deliveries of materials, equipment, etc. with the Governments Security Control for this campus. Traffic control officers are scheduled as follows:
+
+1. Monday through Friday, 0700‑2100, government holidays included.
+2. Saturday and Sunday, 0900‑1800, government holidays included.
+
+# I. Signage
+
+Contractor to provide adequate signage in the Work that depicts emergency routes of egress from the building and site.
+
+# J. Field Staging
+
+Confine field staging and storage areas to areas indicated on the Site Utilization Drawings.
+
+# K. Trash Dumpsters
+
+Coordinate exact locations of dumpsters for building trash and construction debris with the CO prior to delivery to the site as per Site Utilization Drawings. Protect project site and adjacent buildings from flying debris.
+
+# L. Contractor’s Construction Materials
+
+Existing materials and equipment that are removed as part of the construction operations, and that are not reused or designated to be salvaged as Government or other's property, shall become the property of the Contractor and shall be removed from the site. Storage or sale of excess salvageable materials and equipment is not permitted on site.
+
+# M. Contractors On‑Site Office
+
+The Contractor shall provide its on‑site office within the site boundary as established in the Site Utilization Drawings in the construction area as approved by the CO. Contractor shall provide trailers, complete with furniture, equipment, furnishings, and
+
+GSA CISA HQ &#x26; Site Development RFP Package March 18, 2022
+
+Project No. GS11P08MKC0080 011400 ‑ 2 Work Restrictions
+
+SENSITIVE BUT UNCLASSIFIED (SBU)
+
+PROPERTY OF THE UNITED STATES GOVERNMENT
+
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+
+---
+
+
+# GSA CISA HQ &#x26; Site Development
+
+# RFP Package
+
+# March 18, 2022
+
+# Project No. GS11P08MKC0080
+
+# 1.2 GOVERNMENT OCCUPANCY
+
+# A.
+
+The Government will occupy the Campus during the entire period of construction. Cooperate with the Government's representatives during construction operations to minimize conflicts and facilitate Government usage. Perform the Work in a manner that does not interfere with the Government's operations.
+
+# Work Restrictions
+
+# N.
+
+Toilets: Use of the Government's existing toilet facilities in other facilities on the Campus is prohibited. Contractor will provide temporary facilities to be used by Contractor’s employees and Contractor's consultants, sub‑consultants, or vendors within the project boundaries. Toilet facilities will be cleaned by a professional janitorial service daily. All toilet facilities will be maintained in a condition acceptable to the CO and, at completion of construction, the Contractor shall remove the facilities. Provide soap, soap dispenser and paper towels and dispensers as needed for each toilet facility.
+
+# O.
+
+Smoking: Smoking is not permitted in or around the project site, see Facilities Management Regulation (FMR) Case 2008‑102—3. Also, see Code of Federal Regulations (CFR) 41 CFR Part 102‑74.
+
+# P.
+
+Air Emissions: Air emissions, including those from pollution producing equipment, from Contractor equipment shall be minimized to the greatest extent possible and shall not be discharged near air intakes and openings where airborne emissions could be drawn into adjacent building on the St. Elizabeths West Campus. At no time shall occupants of other buildings on campus be exposed to hazardous conditions as a result of construction operations.
+
+# Q.
+
+Contractor On‑Site Parking: Parking will be available on site within the project boundary. Parking is not allowed on the Campus outside the project boundary. This parking ban applies to all Contractor’s employees, consultants, vendors requesting access to the site for daily work activities or periodic project meetings requiring on site access. Access requests for on‑campus parking will not be processed for any reason.
+
+# R.
+
+Use of Utilities and Metering: Contractor shall submit a plan, to be approved by the CO, to install, monitor and report to the CO any use of campus utilities during duration of construction. Meter reading shall be provided to GSA through its CM, on a monthly basis. Failure to install or maintain meters in good operating condition may result in penalties, $5,000.00 per event. Determination of penalties shall be at the sole discretion of the CO. Charges for utility services consumed during construction, water, sewer, electricity, or gas, shall be part of the firm fixed price Base Bid proposal and shall be considered part of General Conditions.
+
+# S.
+
+Work Adjacent to Level V perimeter fence line: The Government requires a 6M (20 FT) clear area between all vehicles, equipment and materials from the existing and active Level V fence to prevent accidental tripping of alarm systems. Clear area shall be marked thru the use of temporary chain link fencing with moveable concrete bases. Work required in this clear area shall be scheduled with the CO a minimum of seven (7) days in advance.
+
+SENSITIVE BUT UNCLASSIFIED (SBU)
+
+PROPERTY OF THE UNITED STATES GOVERNMENT
+
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+
+
+---
+
+
+NOT FOR CONSTRUCTION
+
+# 1.3 WORKING HOURS
+
+# A. Contractor's General Working Hours
+
+The Contractor working hours shall be generally established to occur between the hours of 0500 to 1900 Monday through Friday, except Federal Government Holidays.
+
+# B. After Hours Work
+
+1. Noise generating demolition and removals deemed to be overly disruptive to ongoing operations in occupied buildings of the St. Elizabeth’s West Campus. Determination of whether or not an activity is deemed “disruptive” will be the sole discretion of the CO.
+2. Work requiring shutdown or disruption of any utilities serving occupied portions of the St. Elizabeth’s Campus. Utility shutdowns shall be scheduled at least thirty (30) calendar days in advance and require the prior written approval of the CO. In addition, the schedule for such work shall be re-confirmed with the CO seven (7) calendar days in advance of the actual start of the work. The Contractor shall submit a written work plan for approval by the CO detailing the work to be done, the impact on the occupants, and the amount of time the shutdown is anticipated to take.
+3. Contractor shall submit a plan, to be approved by the CO, detailing traffic management plan on Martin Luther King, Jr. Blvd. (MLK) Cons

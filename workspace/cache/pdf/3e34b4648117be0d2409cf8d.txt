@@ -1,0 +1,334 @@
+
+Project ID:  24090B1-UPD08-JULYREBASE-GSA DATA DATE: 01-Aug-25
+DATE PRINTED: 12-Aug-25
+
+| Activity ID     | Activity Name                                                                                                        | Original Duration | Remaining Duration | Start     | Finish    | 2025 | 2026 | 2027 | 2028 |
+| --------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------ | --------- | --------- | ---- | ---- | ---- | ---- |
+| SUB-4770        | Prepare & Submit - 23 05 48 - Vibration And Seismic Controls For Hvac - Product Data                                 | 30d               | 0d                 | 08-Jan-25 | 09-Jan-25 | A    |      |      |      |
+| RVW-4770        | GSA Review & Approve - 23 05 48 - Vibration And Seismic Controls For Hvac - Product Data                             | 15d               | 0d                 | 08-Jan-25 | 27-Jan-25 | A    |      |      |      |
+| SUB-4780        | Prepare & Submit - 23 05 48 - Vibration And Seismic Controls For Hvac - Shop Drawings                                | 30d               | 0d                 | 20-Mar-25 | 10-Apr-25 | A    |      |      |      |
+| RVW-4780        | GSA Review & Approve - 23 05 48 - Vibration And Seismic Controls For Hvac - Shop Drawings                            | 15d               | 0d                 | 22-Mar-25 | 10-Apr-25 | A    |      |      |      |
+| PI-101-SUB-4780 | PCO#810101: Resumed Work - Prepare & Submit - 23 05 48 - Vibration And Seismic Controls For Hvac - Shop Drawings     | 30d               | 30d                | 08-Aug-25 | 19-Sep-25 |      |      |      |      |
+| PI-101-RVW-4780 | PCO#810101: Resumed Work - GSA Review & Approve - 23 05 48 - Vibration And Seismic Controls For Hvac - Shop Drawings | 15d               | 15d                | 29-Aug-25 | 19-Sep-25 |      |      |      |      |
+| FAB-4770        | Fabricate - 23 05 48 - Vibration And Seismic Controls For Hvac                                                       | 15d               | 15d                | 22-Sep-25 | 10-Oct-25 |      |      |      |      |
+| DEL-4770        | Deliver - 23 05 48 - Vibration And Seismic Controls For Hvac                                                         | 80d               | 80d                | 14-Oct-25 | 10-Feb-26 |      |      |      |      |
+| SUB-4790        | Prepare & Submit - 23 05 53 - Identification For Hvac Piping And Equipment - Product Data                            | 30d               | 30d                | 08-Aug-25 | 19-Sep-25 |      |      |      |      |
+| RVW-4790        | GSA Review & Approve - 23 05 53 - Identification For Hvac Piping And Equipment - Product Data                        | 15d               | 15d                | 22-Sep-25 | 10-Oct-25 |      |      |      |      |
+| FAB-4790        | Fabricate - 23 05 53 - Identification For Hvac Piping And Equipment                                                  | 15d               | 15d                | 14-Oct-25 | 03-Nov-25 |      |      |      |      |
+| DEL-4790        | Deliver - 23 05 53 - Identification For Hvac Piping And Equipment                                                    | 5d                | 5d                 | 04-Nov-25 | 10-Nov-25 |      |      |      |      |
+| SUB-4800        | Prepare & Submit - 23 05 93 - Testing, Adjusting, And Balancing For Hvac 230593-002.0                                | 60d               | 0d                 | 14-Nov-24 | 20-Nov-24 | A    |      |      |      |
+| RVW-4800        | GSA Review & Approve - 23 05 93 - Testing, Adjusting, And Balancing For Hvac                                         | 15d               | 0d                 | 15-Nov-24 | 20-Nov-24 | A    |      |      |      |
+| SUB-4810        | Prepare & Submit - 23 07 00 - Hvac Insulation - Product Data 230700-001.0                                            | 30d               | 0d                 | 28-Oct-24 | 29-Oct-24 | A    |      |      |      |
+| SUB-4820        | Prepare & Submit - 23 07 00 - Hvac Insulation - Sustainable Design 230700-001.0                                      | 30d               | 0d                 | 28-Oct-24 | 29-Oct-24 | A    |      |      |      |
+| RVW-4810        | GSA Review & Approve - 23 07 00 - Hvac Insulation - Product Data                                                     | 15d               | 0d                 | 31-Oct-24 |           | A    |      |      |      |
+
+
+
+---
+
+RVW-4820 GSA Review &#x26; Approve - 23 07 00 - Hvac Insulation - Sustainable Design
+
+| Activity ID         | Activity Name                                                                                                    | Original Duration | Remaining Duration | Start     | Finish    |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------ | --------- | --------- |
+| RVW-4820            | GSA Review & Approve - 23 07 00 - Hvac Insulation - Sustainable Design                                           | 15d               | 0d                 | 31-Oct-24 | A         |
+| FAB-4820            | Fabricate - 23 07 00 - Hvac Insulation                                                                           | 20d               | 0d                 | 27-Nov-24 | A         |
+| PI-101-FAB-4820     | PCO#810101: Resumed Work - Fabricate - 23 07 00 - Hvac Insulation                                                | 19d               | 19d                | 08-Aug-25 | 04-Sep-25 |
+| DEL-4810            | Deliver - 23 07 00 - Hvac Insulation                                                                             | 5d                | 5d                 | 05-Sep-25 | 11-Sep-25 |
+| 2233 0088 0000      | CCOOMMMMIISSIIOONNIINNGG                                                                                         | 45d               | 45d                | 14-Oct-25 | 18-Dec-25 |
+| SUB-6360            | Prepare & Submit - 23 08 00 - Commissioning                                                                      | 30d               | 30d                | 14-Oct-25 | 25-Nov-25 |
+| RVW-7330            | GSA Review & Approve - 23 08 00 - Commissioning                                                                  | 15d               | 15d                | 26-Nov-25 | 18-Dec-25 |
+| 2233 0099 0000      | IINNSSTTRRUUMMEENNTTAATTIIOONN AANNDD CCOONNTTRROOLL FFOORR HHVVAACC                                             | 347d              | 180d               | 24-Oct-24 | A         |
+| SUB-6380            | Prepare & Submit - 23 09 00 - Control Dampers - Product Data                                                     | 30d               | 0d                 | 24-Oct-24 | A         |
+| RVW-4830            | GSA Review & Approve - 23 09 00 - Instrumentation And Control For Hvac - Product Data                            | 15d               | 0d                 | 05-Nov-24 | A         |
+| RVW-7350            | GSA Review & Approve - 23 09 00 - Control Dampers - Product Data                                                 | 15d               | 0d                 | 06-Nov-24 | A         |
+| SUB-4830            | Prepare & Submit - 23 09 00 - Instrumentation And Control For Hvac - Product Data                                | 30d               | 0d                 | 01-Dec-24 | A         |
+| FAB-6370            | Fabricate - 23 09 00 - Control Dampers                                                                           | 15d               | 0d                 | 03-Dec-24 | A         |
+| RVW-7340            | GSA Review & Approve - 23 09 00 - Control Valves - Product Data                                                  | 15d               | 0d                 | 14-Mar-25 | A         |
+| SUB-6370            | Prepare & Submit - 23 09 00 - Control Valves - Product Data                                                      | 30d               | 0d                 | 14-Mar-25 | A         |
+| SUB-4840            | Prepare & Submit - 23 09 00 - Instrumentation And Control For Hvac - Shop Drawings                               | 30d               | 30d                | 01-Aug-25 | 12-Sep-25 |
+| PI-101-RVW-4830     | PCO#810101: Resumed Work - GSA Review & Approve - 23 09 00 - Instrumentation And Control For Hvac - Product Data | 15d               | 15d                | 01-Aug-25 | 21-Aug-25 |
+| Hvac - Product Data |                                                                                                                  |                   |                    |           |           |
+| PI-101-RVW-7350     | PCO#810101: Resumed Work - GSA Review & Approve - 23 09 00 - Control Dampers - Product Data                      | 1d                | 1d                 | 01-Aug-25 | 01-Aug-25 |
+| PI-101-FAB-6370     | PCO#810101: Resumed Work - Fabricate - 23 09 00 - Control Dampers                                                | 14d               | 14d                | 01-Aug-25 | 20-Aug-25 |
+
+Remaining Level of Effort Milestone DHS BUILDING 1 - July Re-Baseline Post Suspension of Work
+
+Actual Level of Effort (OWNER) - 8.01.25
+
+Actual Work
+
+CLARK PROJECT LAYOUT
+
+Critical Remaining Work
+
+Remaining Work
+
+Project ID: 24090B1-UPD08-JULYREBASE-GSA DATA DATE: 01-Aug-25 | DATE PRINTED: 12-Aug-25
+
+---
+
+PI-101-SUB-6370 PCO#810101: Resumed Work - Prepare &#x26; Submit - 23 09 00 - Control Valves - Product Data
+
+# PCO#810101: Resumed Work - Prepare &#x26; Submit - 23 09 00 - Control Valves - Product Data
+
+| Duration | Start Date | End Date  |
+| -------- | ---------- | --------- |
+| 30d      | 08-Aug-25  | 19-Sep-25 |
+
+# DEL-6370 Deliver - 23 09 00 - Control Dampers
+
+| Duration | Start Date | End Date  |
+| -------- | ---------- | --------- |
+| 30d      | 21-Aug-25  | 02-Oct-25 |
+
+# PCO#810101: Resumed Work - GSA Review &#x26; Approve - 23 09 00 - Control Valves - Product Data
+
+| Duration | Start Date | End Date  |
+| -------- | ---------- | --------- |
+| 15d      | 29-Aug-25  | 19-Sep-25 |
+
+# RVW-4840 GSA Review &#x26; Approve - 23 09 00 - Instrumentation And Control For Hvac - Shop Drawings
+
+| Duration | Start Date | End Date  |
+| -------- | ---------- | --------- |
+| 15d      | 15-Sep-25  | 03-Oct-25 |
+
+# FAB-6360 Fabricate - 23 09 00 - Control Valves
+
+| Duration | Start Date | End Date  |
+| -------- | ---------- | --------- |
+| 30d      | 22-Sep-25  | 03-Nov-25 |
+
+# FAB-4840 Fabricate - 23 09 00 - Instrumentation And Control For Hvac
+
+| Duration | Start Date | End Date  |
+| -------- | ---------- | --------- |
+| 80d      | 06-Oct-25  | 03-Feb-26 |
+
+# DEL-6360 Deliver - 23 09 00 - Control Valves
+
+| Duration | Start Date | End Date  |
+| -------- | ---------- | --------- |
+| 30d      | 04-Nov-25  | 18-Dec-25 |
+
+# DEL-4830 Deliver - 23 09 00 - Instrumentation And Control For Hvac
+
+| Duration | Start Date | End Date  |
+| -------- | ---------- | --------- |
+| 40d      | 04-Feb-26  | 01-Apr-26 |
+
+# DEL-7620 Deliver - 23 09 00 - Equipment Controllers
+
+| Duration | Start Date | End Date  |
+| -------- | ---------- | --------- |
+| 55d      | 04-Feb-26  | 22-Apr-26 |
+
+# HHVVAACC MMAATTEERRIIAALL SSTTAANNDDAARRDDSS
+
+| Duration | Start Date | End Date |
+| -------- | ---------- | -------- |
+| 393d     | 17-Sep-24  | A        |
+| 175d     | 15-Apr-26  |          |
+
+# SUB-6450 Prepare &#x26; Submit - HVAC Thermometers and Gauges - Product Data 232100-015.0
+
+| Duration | Start Date | End Date |
+| -------- | ---------- | -------- |
+| 30d      | 17-Sep-24  | A        |
+
+# SUB-6460 Prepare &#x26; Submit - Flow Meters - Product Data 232100-015.0
+
+| Duration | Start Date | End Date |
+| -------- | ---------- | -------- |
+| 30d      | 17-Sep-24  | A        |
+
+# SUB-6500 Prepare &#x26; Submit - Suction Diffusers - Product Data 232100-014.2
+
+| Duration | Start Date | End Date |
+| -------- | ---------- | -------- |
+| 30d      | 17-Sep-24  | A        |
+
+# SUB-6530 Prepare &#x26; Submit - Expansion Tanks - Product Data 232100-014.2
+
+| Duration | Start Date | End Date |
+| -------- | ---------- | -------- |
+| 30d      | 17-Sep-24  | A        |
+
+# SUB-6540 Prepare &#x26; Submit - Air Separators - Product Data 232100-014.2
+
+| Duration | Start Date | End Date |
+| -------- | ---------- | -------- |
+| 30d      | 17-Sep-24  | A        |
+
+# SUB-4850 Prepare &#x26; Submit - HVAC Material Standards - Product Data 233113-001.0
+
+| Duration | Start Date | End Date |
+| -------- | ---------- | -------- |
+| 15d      | 27-Sep-24  | A        |
+
+# SUB-6440 Prepare &#x26; Submit - HVAC Guides and Anchors - Product Data 230529-001.0
+
+| Duration | Start Date | End Date |
+| -------- | ---------- | -------- |
+| 30d      | 27-Sep-24  | A        |
+
+# SUB-6510 Prepare &#x26; Submit - Triple Duty Valves - Product Data 232100-001.0
+
+| Duration | Start Date | End Date |
+| -------- | ---------- | -------- |
+| 30d      | 09-Oct-24  | A        |
+
+# SUB-6480 Prepare &#x26; Submit - HVAC Valves - Product Data 232100-001.0
+
+| Duration | Start Date | End Date |
+| -------- | ---------- | -------- |
+| 30d      | 09-Oct-24  | A        |
+
+# SUB-6490 Prepare &#x26; Submit - HVAC Strainers - Product Data 232100-001.0
+
+| Duration | Start Date | End Date |
+| -------- | ---------- | -------- |
+| 30d      | 09-Oct-24  | A        |
+
+# RVW-7450 GSA Review &#x26; Approve - HVAC Valves - Product Data
+
+| Duration | Start Date | End Date |
+| -------- | ---------- | -------- |
+| 15d      | 10-Oct-24  | A        |
+
+# RVW-7460 GSA Review &#x26; Approve - HVAC Strainers - Product Data
+
+| Duration | Start Date | End Date |
+| -------- | ---------- | -------- |
+| 15d      | 10-Oct-24  | A        |
+
+# SUB-6410 Prepare &#x26; Submit - HVAC Pipe Flex Connectors - Product Data 232100-001.0
+
+| Duration | Start Date | End Date |
+| -------- | ---------- | -------- |
+| 30d      | 18-Oct-24  | A        |
+
+# RVW-4850 GSA Review &#x26; Approve - HVAC Material Standards - Product Data
+
+| Duration | Start Date | End Date |
+| -------- | ---------- | -------- |
+| 15d      | 21-Oct-24  | A        |
+
+# SUB-6390 Prepare &#x26; Submit - HVAC Base Mounted and Inline Pumps - Product Data 232100-014.2
+
+| Duration | Start Date | End Date |
+| -------- | ---------- | -------- |
+| 30d      | 21-Oct-24  | A        |
+
+
+
+---
+
+RVW-7380 GSA Review &#x26; Approve - HVAC Pipe Flex Connectors - Product Data
+
+# Product Data
+
+| Activity ID | Activity Name                                             | Original Duration | Remaining Duration | Start Date | Finish Date |
+| ----------- | --------------------------------------------------------- | ----------------- | ------------------ | ---------- | ----------- |
+| RVW-7380    | GSA Review & Approve - HVAC Pipe Flex Connectors          | 15d               | 0d                 | 21-Oct-24  | A           |
+| SUB-6430    | Prepare & Submit - HVAC Expansion Loops                   | 30d               | 0d                 | 21-Oct-24  | A           |
+| RVW-7440    | GSA Review & Approve - Thermal Energy Meters              | 15d               | 0d                 | 21-Oct-24  | A           |
+| RVW-7470    | GSA Review & Approve - Suction Diffusers                  | 15d               | 0d                 | 21-Oct-24  | A           |
+| RVW-7500    | GSA Review & Approve - Expansion Tanks                    | 15d               | 0d                 | 21-Oct-24  | A           |
+| RVW-7510    | GSA Review & Approve - Air Separators                     | 15d               | 0d                 | 21-Oct-24  | A           |
+| RVW-7360    | GSA Review & Approve - HVAC Base Mounted and Inline Pumps | 15d               | 0d                 | 22-Oct-24  | A           |
+| RVW-7400    | GSA Review & Approve - HVAC Expansion Loops               | 15d               | 0d                 | 22-Oct-24  | A           |
+| RVW-7410    | GSA Review & Approve - HVAC Guides and Anchors            | 15d               | 0d                 | 22-Oct-24  | A           |
+| SUB-6470    | Prepare & Submit - Thermal Energy Meters                  | 30d               | 0d                 | 15-Nov-24  | A           |
+| RVW-7420    | GSA Review & Approve - HVAC Thermometers and Gauges       | 15d               | 0d                 | 18-Nov-24  | A           |
+| RVW-7430    | GSA Review & Approve - Flow Meters                        | 15d               | 0d                 | 18-Nov-24  | A           |
+| FAB-6400    | Fabricate - HVAC Pipe Flex Connectors                     | 15d               | 0d                 | 02-Dec-24  | A           |
+| FAB-6460    | Fabricate - Thermal Energy Meters                         | 15d               | 0d                 | 02-Dec-24  | A           |
+| FAB-6380    | Fabricate - HVAC Base Mounted and Inline Pumps            | 90d               | 0d                 | 03-Dec-24  | A           |
+| FAB-6420    | Fabricate - HVAC Expansion Loops                          | 15d               | 0d                 | 03-Dec-24  | A           |
+| FAB-6430    | Fabricate - HVAC Guides and Anchors                       | 15d               | 0d                 | 03-Dec-24  | A           |
+
+# Remaining Level of Effort Milestone
+
+DHS BUILDING 1 - July Re-Baseline Post Suspension of Work
+
+Actual Level of Effort (OWNER) - 8.01.25
+
+Actual Work
+
+CLARK PROJECT LAYOUT
+
+Critical Remaining Work
+
+Remaining Work
+
+# Project ID: 24090B1-UPD08-JULYREBASE-GSA
+
+DATA DATE: 01-Aug-25
+
+DATE PRINTED: 12-Aug-25
+
+| Activity ID | Activity Name                                  | Original Duration | Remaining Duration | Start Date | Finish Date |
+| ----------- | ---------------------------------------------- | ----------------- | ------------------ | ---------- | ----------- |
+| SUB-6420    | Prepare & Submit - Bypass Chemical Shot Feeder | 30d               | 0d                 | 11-Dec-24  | A           |
+| FAB-4850    | Fabricate - HVAC Material Standards            | 15d               | 0d                 | 01-Jan-25  | A           |
+| FAB-6470    | Fabricate - HVAC Valves                        | 15d               | 0d                 | 01-Jan-25  | A           |
+| FAB-6480    | Fabricate - HVAC Strainers                     | 15d               | 0d                 | 01-Jan-25  | A           |
+
+
+
+---
+
+SUB-6520 Prepare &#x26; Submit - Air Vents - Product Data 233113-001.0
+
+# SUB-6520
+
+Prepare &#x26; Submit - Air Vents - Product Data 233113-001.0
+
+30d 0d 02-Jan-25 A 02P-Jraepna-2r5e
+
+# SUB-6550
+
+Prepare &#x26; Submit - SS Bellows Flex Connectors - Product Data 232100-001.0
+
+30d 0d 02-Jan-25 A 02P-Jraepna-2r5e
+
+# RVW-7390
+
+GSA Review &#x26; Approve - Bypass Chemical Shot Feeder - Product Data
+
+15d 0d 01-Feb-25 A 28-FebG-2S5A
+
+# RVW-7480
+
+GSA Review &#x26; Approve - Triple Duty Valves - Product Data
+
+15d 0d 01-Feb-25 A 28-FebG-2S5A
+
+# RVW-7490
+
+GSA Review &#x26; Approve - Air Vents - Product Data
+
+15d 0d 01-Feb-25 A 28-FebG-2S5A
+
+# RVW-7520
+
+GSA Review &#x26; Approve - SS Bellows Flex Connectors - Product Data
+
+15d 0d 01-Feb-25 A 28-FebG-2S5A
+
+# SUB-6400
+
+Prepare &#x26; Submit - Automatic Condensate Units - Product Data
+
+30d 30d 01-Aug-25 12-Sep-25
+
+# FAB-6410
+
+Fabricate - Bypass Chemical Shot Feeder
+
+15d 15d 01-Aug-25 21-Aug-25
+
+# FAB-6440
+
+Fabricat
