@@ -1,0 +1,124 @@
+🤖 AI ASSISTANT INSTRUCTIONS FOR P6 SCHEDULE REVIEW
+================================================
+
+PROJECT CONTEXT:
+• Project: 24090B1-BL-REV2-02.2025-COST
+• Review Type: Single Schedule
+• Activities: 6,495
+• Relationships: 13,077
+
+ANALYSIS FRAMEWORK:
+1. Use PyP6XER (xerparser.Reader) for all schedule data parsing.
+2. Treat specifications as the authoritative reference ("law of the land").
+3. Reference spec locations using: "Specification [SECTION] [SUBSECTION]".
+4. Flag narrative statements that contradict specifications.
+5. Provide evidence-based analysis with activity IDs and relationship details.
+
+AVAILABLE INPUTS:
+• XER File: 24090B1-BL-REV2-02.2025-COST.xer
+• Narrative: 013210-012.0-MonthlyNetworkAnalysisUpdateJuly2025.pdf
+• Specifications: testsp.pdf
+
+KEY ANALYSIS AREAS:
+• Schedule logic and relationships
+• Float analysis and critical path
+• Specification compliance
+• Responsibility analysis (contractor vs owner)
+• Non-compensable delays
+• Resource and crew management
+
+When proposing fixes or findings, be concise, cite specific activities, and reference specs when applicable.
+
+DOCUMENT EXCERPTS (for context)
+-------------------------------
+Narrative (llama-parse):
+
+Project ID:  24090B1-UPD08-JULYREBASE-GSA DATA DATE: 01-Aug-25
+DATE PRINTED: 12-Aug-25
+
+| Activity ID     | Activity Name                                                                                                        | Original Duration | Remaining Duration | Start     | Finish    | 2025 | 2026 | 2027 | 2028 |
+| --------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------ | --------- | --------- | ---- | ---- | ---- | ---- |
+| SUB-4770        | Prepare & Submit - 23 05 48 - Vibration And Seismic Controls For Hvac - Product Data                                 | 30d               | 0d                 | 08-Jan-25 | 09-Jan-25 | A    |      |      |      |
+| RVW-4770        | GSA Review & Approve - 23 05 48 - Vibration And Seismic Controls For Hvac - Product Data                             | 15d               | 0d                 | 08-Jan-25 | 27-Jan-25 | A    |      |      |      |
+| SUB-4780        | Prepare & Submit - 23 05 48 - Vibration And Seismic Controls For Hvac - Shop Drawings                                | 30d               | 0d                 | 20-Mar-25 | 10-Apr-25 | A    |      |      |      |
+| RVW-4780        | GSA Review & Approve - 23 05 48 - Vibration And Seismic Controls For Hvac - Shop Drawings                            | 15d               | 0d                 | 22-Mar-25 | 10-Apr-25 | A    |      |      |      |
+| PI-101-SUB-4780 | PCO#810101: Resumed Work - Prepare & Submit - 23 05 48 - Vibration And Seismic Controls For Hvac - Shop Drawings     | 30d               | 30d                | 08-Aug-25 | 19-Sep-25 |      |      |      |      |
+| PI-101-RVW-4780 | PCO#810101: Resumed Work - GSA Review & Approve - 23 05 48 - Vibration And Seismic Controls For Hvac - Shop Drawings | 15d               | 15d                | 29-Aug-25 | 19-Sep-25 |      |      |      |      |
+| FAB-4770        | Fabricate - 23 05 48 - Vibration An
+...
+
+Specification (llama-parse):
+# RFP Package - Specifications Volume 1
+
+18 MARCH 2022
+
+---
+
+
+# NOT FOR CONSTRUCTION
+
+# TABLE OF CONTENTS – VOLUME 1
+
+# DIVISION 01 — GENERAL REQUIREMENTS
+
+- 011000 ‑ Summary
+- 011400 ‑ Work Restrictions
+- 012100 ‑ SCIF
+- 012400 ‑ Options
+- 012500 ‑ Substitution Procedures
+- 012900 ‑ Payment Procedures
+- 013100 ‑ Project Management and Coordination
+- 013210 ‑ Network Analysis Schedules (NAS)
+- 013220 ‑ Photographic Documentation
+- 013300 ‑ Submittal Procedures
+- 013510 ‑ Historic Treatment Procedures
+- 013593 ‑ Archeological Discoveries
+- 013600 ‑ COBie
+- 014000 ‑ Quality Control
+- 014200 ‑ References, Definitions, and Abbreviations
+- 014500 ‑ Structural Testing and Inspection
+- 015000 ‑ Temporary Facilities and Controls
+- 015713.13 ‑ Temporary Erosion and Sedimentation Control Plan
+- 015930 ‑ Security Regulations
+- 015950 ‑ Safety and Health
+- 016000 ‑ Product Requirements
+- 017000 ‑ Execution Requirements
+- 017329 ‑ Cutting and Patching
+- 017350 ‑ Fire Prevention Precautions for Hot Work
+- 017700 ‑ Closeout Procedures
+- 017822 ‑ Operation and Maintenance Documentation
+- 017839 ‑ Project Record Documents
+- 017900 ‑ Demonstration and Training
+- 018100 ‑ Sustainable Design Reporting
+- 018100A ‑ LEED Material Content Form
+- 018113 ‑ Sustainable Design Requirements
+- 018123 ‑ Blast Performance Requirements
+- 018200 ‑ Volatile Organic Compound (VOC) Restrictions
+- 018300 ‑ Construction and Demolition Waste Management
+- 018400 ‑ Indoor Air Quality Management
+
+# DIVISION 02 — EXISTING CONDITIONS
+
+- 020185 ‑ Remediation of Buildings 56‑57
+- 023000 ‑ Subsurface Information
+- 024100 ‑ Roof Demolition and Cleanup
+
+# DIVISION 03 — CONCRETE
+
+- 030130 ‑ Maintenance of Concrete at Buildings 56 and 57
+
+GSA CISA HQ &#x26; Site Development RFP Package March 18, 2022
+
+Project No. GS11P08MKC0080 TOC ‑ 1 Table of Contents
+
+SENSITIVE BUT UNCLASSIFIED (SBU)
+
+PROPERTY OF THE UNITED STATES GOVERNMENT
+
+Do not remove this notice. Properly destroy documents when no longer needed.
+
+---
+
+
+GSA C
+...
