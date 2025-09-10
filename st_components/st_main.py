@@ -39,19 +39,38 @@ def st_main():
     #     st.error(e)
 
 def create_or_get_current_conversation():
+    """
+    CRITICAL: Ensure conversations and messages persist across page refreshes
+    """
+    # Initialize messages if not present
+    if 'messages' not in st.session_state:
+        st.session_state["messages"] = []
+    
     if 'current_conversation' not in st.session_state:
         conversations, conversation_options = init_conversations()
         if conversations:
+            # Load the most recent conversation
             st.session_state['current_conversation'] = conversations[0]
+            # CRITICAL: Load messages from database immediately
+            loaded_messages = get_chats_by_conversation_id(st.session_state['current_conversation']["id"])
+            st.session_state["messages"] = loaded_messages if loaded_messages else []
         else:
+            # Create new conversation if none exist
             conversation_id = str(uuid.uuid4())
-            new_conversation = Conversation(conversation_id, st.session_state.user_id, f"Conversation {len(conversations)}")
+            new_conversation = Conversation(conversation_id, st.session_state.user_id, f"Conversation {len(conversations) + 1}")
             save_conversation(new_conversation)
-            st.session_state['current_conversation'] = new_conversation
+            st.session_state['current_conversation'] = new_conversation.__dict__
             st.session_state["messages"] = []
             st.rerun()
     else:
-        st.session_state.messages = get_chats_by_conversation_id(st.session_state['current_conversation']["id"])
+        # CRITICAL: Always reload messages from database to ensure persistence
+        # This ensures messages survive page refresh
+        loaded_messages = get_chats_by_conversation_id(st.session_state['current_conversation']["id"])
+        if loaded_messages:
+            st.session_state["messages"] = loaded_messages
+        # If no messages in database but some in session, keep session messages
+        elif not st.session_state.get("messages"):
+            st.session_state["messages"] = []
 
 def render_messages():
     """

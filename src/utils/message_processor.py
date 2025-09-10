@@ -60,34 +60,38 @@ class MessageProcessor:
         return st.session_state.get('concise_mode', True)
 
     def filter_verbose_language(self, text: str) -> str:
-        """Remove verbose language patterns from text"""
+        """Remove verbose language patterns from text while preserving word spacing"""
         if not self.is_concise_mode():
             return text
             
-        # Remove verbose patterns
+        # Remove verbose patterns but preserve spacing
         for pattern in self.verbose_patterns:
-            text = re.sub(pattern, '', text, flags=re.IGNORECASE)
+            text = re.sub(pattern, ' ', text, flags=re.IGNORECASE)
         
-        # Remove thought process patterns
+        # Remove thought process patterns but preserve spacing
         for pattern in self.thought_patterns:
-            text = re.sub(pattern, '', text, flags=re.IGNORECASE)
+            text = re.sub(pattern, ' ', text, flags=re.IGNORECASE)
         
-        # Clean up extra whitespace and newlines
-        text = re.sub(r'\n\s*\n\s*\n', '\n\n', text)
-        text = re.sub(r'^\s+', '', text, flags=re.MULTILINE)
+        # Clean up multiple spaces and normalize whitespace
+        text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with single space
+        text = re.sub(r'\n\s*\n\s*\n', '\n\n', text)  # Clean up excessive newlines
+        text = re.sub(r'^\s+', '', text, flags=re.MULTILINE)  # Remove leading whitespace
         
         return text.strip()
 
     def filter_code_output(self, text: str) -> str:
-        """Filter code output based on user preferences"""
+        """Filter code output based on user preferences while preserving word spacing"""
         if self.should_show_code_output():
             return text
         
-        # Remove code blocks and execution output
+        # Remove code blocks and execution output but preserve spacing
         for pattern in self.meta_patterns:
-            text = re.sub(pattern, '', text, flags=re.DOTALL | re.IGNORECASE)
+            text = re.sub(pattern, ' ', text, flags=re.DOTALL | re.IGNORECASE)
         
-        return text
+        # Normalize whitespace after filtering
+        text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with single space
+        
+        return text.strip()
 
     def process_chunk(self, chunk: Dict[str, Any]) -> Dict[str, Any]:
         """Process individual response chunks"""
@@ -108,13 +112,20 @@ class MessageProcessor:
         return chunk
 
     def format_final_response(self, response: str) -> str:
-        """Format the final response for consistency"""
+        """Format the final response for consistency with guaranteed proper word spacing"""
         if not response:
             return response
         
         # Apply all filters
         response = self.filter_verbose_language(response)
         response = self.filter_code_output(response)
+        
+        # CRITICAL: Ensure proper word spacing throughout
+        # Fix common spacing issues that might occur during processing
+        response = re.sub(r'([a-zA-Z])([A-Z])', r'\1 \2', response)  # Add space before capital letters
+        response = re.sub(r'([.!?])([a-zA-Z])', r'\1 \2', response)  # Add space after punctuation
+        response = re.sub(r'([a-zA-Z])([.!?])', r'\1\2', response)  # No space before punctuation
+        response = re.sub(r'\s+', ' ', response)  # Normalize all whitespace to single spaces
         
         # Ensure concise responses
         if self.is_concise_mode():
@@ -124,7 +135,11 @@ class MessageProcessor:
                 # Keep first 3 sentences and add ellipsis if needed
                 response = '. '.join(sentences[:3]) + '.'
         
-        return response.strip()
+        # Final spacing cleanup
+        response = response.strip()
+        response = re.sub(r'\s+', ' ', response)  # One more pass to ensure single spaces
+        
+        return response
 
     def is_simple_greeting(self, prompt: str) -> bool:
         """Check if the prompt is a simple greeting"""

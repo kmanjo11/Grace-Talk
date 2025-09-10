@@ -23,6 +23,10 @@ def init_session_states():
     if 'interpreter' not in st.session_state:
         st.session_state['interpreter'] = interpreter
     
+    # CRITICAL: Always ensure messages list exists for conversation persistence
+    if 'messages' not in st.session_state:
+        st.session_state['messages'] = []
+    
     # Load persistent API keys from environment variables
     if 'openai_key' not in st.session_state or not st.session_state['openai_key']:
         st.session_state['openai_key'] = os.getenv('OPENAI_API_KEY', '')
