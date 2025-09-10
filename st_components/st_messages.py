@@ -305,12 +305,11 @@ def format_response(chunk, full_response):
     if processed_chunk.get('type') == 'hidden':
         return full_response
     
-    # Message
+    # Message - DO NOT filter individual chunks to preserve word spacing
     if processed_chunk['type'] == "message":
         content = processed_chunk.get("content", "")
         if content:
-            # Apply message filtering
-            content = message_processor.filter_verbose_language(content)
+            # Add content directly without filtering chunks (filtering happens at the end)
             full_response += content
         if processed_chunk.get('end', False):
             full_response += "\n"

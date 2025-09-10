@@ -94,7 +94,7 @@ class MessageProcessor:
         return text.strip()
 
     def process_chunk(self, chunk: Dict[str, Any]) -> Dict[str, Any]:
-        """Process individual response chunks"""
+        """Process individual response chunks - NO FILTERING to preserve word spacing"""
         chunk_type = chunk.get('type', '')
         
         # Hide code execution chunks if not requested
@@ -102,13 +102,8 @@ class MessageProcessor:
             if chunk_type in ['code', 'console', 'confirmation']:
                 return {'type': 'hidden', 'content': ''}
         
-        # Process message content
-        if chunk_type == 'message':
-            content = chunk.get('content', '')
-            if content:
-                content = self.filter_verbose_language(content)
-                chunk['content'] = content
-        
+        # DO NOT filter message content here - it breaks word spacing
+        # Filtering will be applied to the final complete response
         return chunk
 
     def format_final_response(self, response: str) -> str:

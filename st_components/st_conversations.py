@@ -33,6 +33,11 @@ def create_conversation(conversation_options):
             user_id = st.session_state.user_id
             new_conversation = Conversation(conversation_id, user_id, new_conversation_name)
             save_conversation(new_conversation)
+            
+            # CRITICAL: Set as current conversation and clear messages
+            st.session_state['current_conversation'] = new_conversation.__dict__
+            st.session_state["messages"] = []
+            
             st.success(f"Conversation '{new_conversation_name}' added successfully!")
             st.rerun()
 
@@ -52,11 +57,22 @@ def navigate_past_conversations(conversations, conversation_options):
         )
 
         if(selected_conversation):
-            for element in conversations:
-                if element.get("name") == selected_conversation:
-                    st.session_state['current_conversation'] = element
-                    break
-            st.session_state.messages = get_chats_by_conversation_id(st.session_state['current_conversation']["id"])
+            # Check if this is a different conversation than current
+            current_conv_name = st.session_state.get('current_conversation', {}).get('name', '')
+            if current_conv_name != selected_conversation:
+                # Find and set the selected conversation
+                for element in conversations:
+                    if element.get("name") == selected_conversation:
+                        st.session_state['current_conversation'] = element
+                        break
+                
+                # CRITICAL: Force reload messages from database and refresh UI
+                conversation_id = st.session_state['current_conversation']["id"]
+                loaded_messages = get_chats_by_conversation_id(conversation_id)
+                st.session_state["messages"] = loaded_messages if loaded_messages else []
+                
+                # Force UI refresh to show the loaded conversation
+                st.rerun()
     
 def delete_current_conversation():
     if 'current_conversation' in st.session_state and st.button("Delete Current Conversation", type='primary'):
