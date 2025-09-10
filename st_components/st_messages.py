@@ -5,6 +5,8 @@ from st_components.st_interpreter import setup_interpreter
 from src.utils.lessons_retriever import retrieve, ensure_index_built
 # Database
 from src.data.database import save_chat, save_lesson
+# Message processor for consistency
+from src.utils.message_processor import message_processor
 import uuid
 import re
 from src.data.models import Chat
@@ -188,6 +190,17 @@ def handle_assistant_response(prompt):
         full_response = ""
         message_placeholder = st.empty()
 
+        # Check for simple greeting
+        if message_processor.is_simple_greeting(prompt):
+            reply = message_processor.get_greeting_response()
+            message_placeholder.markdown(reply)
+            st.session_state.messages.append({"role": "assistant", "content": reply})
+            assistant_chat = Chat(
+                st.session_state['current_conversation']["id"], "assistant", reply
+            )
+            save_chat(assistant_chat)
+            return
+
         # Intent: explicit sandbox creation/health check
         pl = (prompt or "").strip().lower()
         if any(kw in pl for kw in ["create a sandbox", "make a sandbox", "start sandbox", "docker sandbox", "check docker"]):
@@ -208,89 +221,60 @@ def handle_assistant_response(prompt):
             else:
                 st.markdown("Docker Sandbox is unavailable. Start Docker Desktop, then try again. You can also enable 'Prefer Local Execution' to skip Docker.")
             return
+
+        # Build message with memory and system prompt
         message = add_memory(prompt)
-        # Hidden style guide: enforce concise, non-templated replies
-        concise = st.session_state.get('concise_mode', True)
-        schedule_focus = st.session_state.get('schedule_focus_mode', False)
-        base_guide = [
-            "- Do NOT restate or 'recap' the user's message unless explicitly asked.",
-            "- Do NOT output templates like 'Recap/Patterns/Proposed Fix' unless requested.",
-            "- Prefer natural, conversational tone over rigid checklists.",
-        ]
-        if concise:
-            base_guide += [
-                "- Keep answers short and on-topic (1-4 sentences, or a few bullets).",
-                "- Do NOT apologize unless asked; do NOT include filler phrases.",
-                "- Do NOT include code unless the user explicitly asks for code.",
-            ]
-        if schedule_focus:
-            base_guide += [
-                "- Use only P6 context, PDFs, and Knowledge Base; avoid proposing to run code.",
-                "- Cite schedule findings succinctly; avoid meta commentary.",
-            ]
-        style_guide = "\n[Style Guide]\n" + "\n".join(base_guide) + "\n"
-        message = style_guide + "\n\n" + message
+        
+        # Add system prompt with style guidelines
+        system_prompt = message_processor.build_system_prompt()
+        message = system_prompt + message
         # Hidden domain context: P6 schedule review instructions, if available
         p6_ctx = st.session_state.get('p6_context')
         if p6_ctx:
             message = ("\n[Domain Context: P6 Schedule Review]\n" + p6_ctx + "\n\n" + message)
         
-        # Simple-mode: if the user just greets with a very short salutation, avoid extra augmentations
-        import re as _re
-        p_lower = (prompt or '').strip().lower()
-        simple_mode = False
-        if len(p_lower) <= 12 and _re.fullmatch(r"(hi|hey|hello|yo|sup|howdy|hola|hi there|hello there)[.!?]*", p_lower):
-            simple_mode = True
-
-        # If it's a short greeting, answer directly and skip all augmentation/LLM streaming
-        if simple_mode:
-            reply = "Hi! How can I help?"
-            # Render concise reply
-            message_placeholder.markdown(reply)
-            # Persist assistant message
-            st.session_state.messages.append({"role": "assistant", "content": reply})
-            assistant_chat = Chat(
-                st.session_state['current_conversation']["id"], "assistant", reply
-            )
-            save_chat(assistant_chat)
-            return
-
-        # Hidden auto-grep augmentation (skip in simple-mode)
-        if not simple_mode and st.session_state.get('use_auto_grep', True):
-            grep_block = _build_hidden_grep_context(prompt)
-            if grep_block:
-                message = message + grep_block
-        # Hidden PDF context from uploaded chat files (vector-retrieved sections)
-        if not simple_mode and st.session_state.get('use_pdf_context', True):
-            try:
-                chat_files = st.session_state.get('chat_files', {})
-                pdfs = [str(p) for p in chat_files.values() if str(p).lower().endswith('.pdf')]
-                if pdfs:
-                    # Build/update index if needed
-                    ensure_pdf_index_built(pdfs)
-                    sections = retrieve_pdf_sections(prompt, top_k=3)
-                    if sections:
-                        blocks = []
-                        total = 0
-                        for s in sections:
-                            title = s.get('title') or 'Section'
-                            body = (s.get('body') or '')[:1200]
-                            path = s.get('path') or ''
-                            blocks.append(f"PDF: {path}\n# {title}\n{body}\n...")
-                            total += len(body)
-                            if total > 3500:
-                                break
-                        if blocks:
-                            message += ("\n---\n"
-                                        "Relevant document sections (PDF).\n" +
-                                        "\n\n".join(blocks))
-            except Exception:
-                pass
-        # Hidden augmentation: inject lessons behind the scenes (no UI output)
-        if not simple_mode and st.session_state.get('use_commit_lessons', False):
-            hidden = _build_hidden_lessons_context(prompt)
-            if hidden:
-                message = message + hidden
+        # Skip augmentation for simple greetings or if not needed
+        if not message_processor.should_use_augmentation(prompt):
+            pass  # No additional augmentation needed
+        else:
+            # Hidden auto-grep augmentation
+            if st.session_state.get('use_auto_grep', True):
+                grep_block = _build_hidden_grep_context(prompt)
+                if grep_block:
+                    message = message + grep_block
+            
+            # Hidden PDF context from uploaded chat files
+            if st.session_state.get('use_pdf_context', True):
+                try:
+                    chat_files = st.session_state.get('chat_files', {})
+                    pdfs = [str(p) for p in chat_files.values() if str(p).lower().endswith('.pdf')]
+                    if pdfs:
+                        # Build/update index if needed
+                        ensure_pdf_index_built(pdfs)
+                        sections = retrieve_pdf_sections(prompt, top_k=3)
+                        if sections:
+                            blocks = []
+                            total = 0
+                            for s in sections:
+                                title = s.get('title') or 'Section'
+                                body = (s.get('body') or '')[:1200]
+                                path = s.get('path') or ''
+                                blocks.append(f"PDF: {path}\n# {title}\n{body}\n...")
+                                total += len(body)
+                                if total > 3500:
+                                    break
+                            if blocks:
+                                message += ("\n---\n"
+                                            "Relevant document sections (PDF).\n" +
+                                            "\n\n".join(blocks))
+                except Exception:
+                    pass
+            
+            # Hidden augmentation: inject lessons behind the scenes
+            if st.session_state.get('use_commit_lessons', False):
+                hidden = _build_hidden_lessons_context(prompt)
+                if hidden:
+                    message = message + hidden
         with st.spinner('thinking'):
             for chunk in st.session_state['interpreter'].chat([{"role": "user", "type": "message", "content": message}], display=False, stream=True):
                 full_response = format_response(chunk, full_response)
@@ -299,76 +283,79 @@ def handle_assistant_response(prompt):
                 message_placeholder.markdown(full_response + "▌")
                 message_placeholder.markdown(full_response)
 
+        # Apply final message processing
+        final_response = message_processor.format_final_response(full_response)
+        
         st.session_state.messages.append(
-            {"role": "assistant", "content": full_response})
+            {"role": "assistant", "content": final_response})
         assistant_chat = Chat(
-            st.session_state['current_conversation']["id"], "assistant", full_response)
+            st.session_state['current_conversation']["id"], "assistant", final_response)
         save_chat(assistant_chat)
         st.session_state['mensajes'] = st.session_state['interpreter'].messages
 
         # Auto-save successful fix exchanges as lessons (invisible)
-        _auto_save_fix_as_lesson(user_prompt=prompt, assistant_reply=full_response)
+        _auto_save_fix_as_lesson(user_prompt=prompt, assistant_reply=final_response)
 
 
 def format_response(chunk, full_response):
-    # Respect UI preference: hide execution output when disabled
-    _show_exec = st.session_state.get('show_exec_output', False)
+    # Process chunk through message processor
+    processed_chunk = message_processor.process_chunk(chunk)
+    
+    # Skip hidden chunks
+    if processed_chunk.get('type') == 'hidden':
+        return full_response
+    
     # Message
-    if chunk['type'] == "message":
-        full_response += chunk.get("content", "")
-        if chunk.get('end', False):
+    if processed_chunk['type'] == "message":
+        content = processed_chunk.get("content", "")
+        if content:
+            # Apply message filtering
+            content = message_processor.filter_verbose_language(content)
+            full_response += content
+        if processed_chunk.get('end', False):
             full_response += "\n"
 
-    # Code
-    if chunk['type'] == "code":
-        if _show_exec:
-            if chunk.get('start', False):
+    # Code (only show if enabled)
+    if processed_chunk['type'] == "code":
+        if message_processor.should_show_code_output():
+            if processed_chunk.get('start', False):
                 full_response += "```python\n"
-            full_response += chunk.get('content', '')
-            if chunk.get('end', False):
+            full_response += processed_chunk.get('content', '')
+            if processed_chunk.get('end', False):
                 full_response += "\n```\n"
-        else:
-            # Suppress code blocks when execution output is hidden
-            pass
 
-    # Output
-    if chunk['type'] == "confirmation":
-        if _show_exec:
-            if chunk.get('start', False):
+    # Output (only show if enabled)
+    if processed_chunk['type'] == "confirmation":
+        if message_processor.should_show_code_output():
+            if processed_chunk.get('start', False):
                 full_response += "```python\n"
-            full_response += chunk.get('content', {}).get('code', '')
-            if chunk.get('end', False):
+            full_response += processed_chunk.get('content', {}).get('code', '')
+            if processed_chunk.get('end', False):
                 full_response += "```\n"
-        else:
-            # Suppress confirmation output when execution output is hidden
-            pass
 
-    # Console
-    if chunk['type'] == "console":
-        if _show_exec:
-            if chunk.get('start', False):
+    # Console (only show if enabled)
+    if processed_chunk['type'] == "console":
+        if message_processor.should_show_code_output():
+            if processed_chunk.get('start', False):
                 full_response += "```python\n"
-            if chunk.get('format', '') == "active_line":
-                console_content = chunk.get('content', '')
+            if processed_chunk.get('format', '') == "active_line":
+                console_content = processed_chunk.get('content', '')
                 if console_content is None:
                    full_response += "No output available on console."
-            if chunk.get('format', '') == "output":
-                console_content = chunk.get('content', '')
+            if processed_chunk.get('format', '') == "output":
+                console_content = processed_chunk.get('content', '')
                 full_response += console_content
-            if chunk.get('end', False):
+            if processed_chunk.get('end', False):
                 full_response += "\n```\n"
-        else:
-            # Suppress console output when execution output is hidden
-            pass
 
     # Image
-    if chunk['type'] == "image":
-        if chunk.get('start', False) or chunk.get('end', False):
+    if processed_chunk['type'] == "image":
+        if processed_chunk.get('start', False) or processed_chunk.get('end', False):
             full_response += "\n"
         else:
-            image_format = chunk.get('format', '')
+            image_format = processed_chunk.get('format', '')
             if image_format == 'base64.png':
-                image_content = chunk.get('content', '')
+                image_content = processed_chunk.get('content', '')
                 if image_content:
                     image = Image.open(
                         BytesIO(base64.b64decode(image_content)))

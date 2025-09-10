@@ -2,6 +2,7 @@ import streamlit as st
 from src.utils.docker_executor import DockerCodeExecutor
 from src.utils.firejail_executor import FirejailCodeExecutor
 from src.utils.python_sandbox import RestrictedEnvironment
+from src.utils.ubuntu_sandbox import UbuntuSandboxExecutor
 from src.utils.deps import ensure_package
 import time
 
@@ -28,10 +29,11 @@ def setup_interpreter():
     st.session_state['interpreter'].computer.offline = False  # Allow internet access
     st.session_state['interpreter'].computer.verbose = False  # Reduce verbose output
     
-    # Integrate sandboxing for code execution (Docker -> Firejail -> Python Sandbox -> Local)
+    # Integrate sandboxing for code execution (Docker -> Firejail -> Ubuntu -> Python Sandbox -> Local)
     original_run = st.session_state['interpreter'].computer.run
     docker_executor = DockerCodeExecutor()
     firejail_executor = FirejailCodeExecutor()
+    ubuntu_sandbox = UbuntuSandboxExecutor()
     python_sandbox = RestrictedEnvironment()
 
     # Cache Docker health to avoid spamming daemon when it's down
@@ -68,7 +70,7 @@ def setup_interpreter():
         return bool(_re.match(r"^(from |import |def |class |print\(|for |while |if |try:|#)", c))
 
     def sandboxed_run(command, *args, **kwargs):
-        """Override run method to use sandbox (Docker > Firejail > Python Sandbox > Local)"""
+        """Override run method to use sandbox (Docker > Firejail > Ubuntu > Python Sandbox > Local)"""
         try:
             # For Python code, try Docker first
             # Periodically retry Docker availability (every 5 minutes)
@@ -82,14 +84,17 @@ def setup_interpreter():
 
             if _is_probable_python_code(command):
                 try:
-                    # If user prefers local, skip Docker/Firejail entirely
+                    # If user prefers local, skip all sandboxes
                     if st.session_state.get('prefer_local_exec', False):
                         raise RuntimeError('Prefer local execution')
+                    
+                    # Try Docker first
                     result = docker_executor.execute_code(command, 'python') if st.session_state.get('docker_available', False) else 'Docker not available'
                     # If docker is unavailable, fall through to other sandboxes
                     if isinstance(result, str) and result.strip().lower().startswith('docker not available'):
                         raise RuntimeError('Docker unavailable')
                     return _yield_console("🐳 Docker Sandbox:\n" + (result or ""))
+                    
                 except Exception as docker_error:
                     # Try Firejail if Docker fails/unavailable and not preferring local
                     if not st.session_state.get('prefer_local_exec', False) and firejail_executor.is_available():
@@ -98,10 +103,19 @@ def setup_interpreter():
                             return _yield_console("🔥 Firejail Sandbox:\n" + (result or ""))
                         except Exception as firejail_error:
                             pass
-                    # Try Python sandbox
+                    
+                    # Try Ubuntu sandbox if Firejail fails
+                    if not st.session_state.get('prefer_local_exec', False) and ubuntu_sandbox.is_available():
+                        try:
+                            result = ubuntu_sandbox.execute_code(command, 'python')
+                            return _yield_console("🐧 Ubuntu Sandbox:\n" + (result or ""))
+                        except Exception as ubuntu_error:
+                            pass
+                    
+                    # Try Python sandbox as final fallback
                     try:
                         result = python_sandbox.execute_code(command, 'python')
-                        return _yield_console(result or "")
+                        return _yield_console("🐍 Python Sandbox:\n" + (result or ""))
                     except Exception as python_error:
                         pass
             
