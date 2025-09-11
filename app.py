@@ -20,9 +20,10 @@ from src.utils.lessons_miner import mine_default_datasets
 from src.utils.lessons_retriever import build_index
 
 load_dotenv()  # Load environment variables from .env if present
+
 set_style()
 
-st.title("💬 Open Interpreter")
+st.title("💬 Grace")
 
 # Ensure DB tables exist
 create_tables()

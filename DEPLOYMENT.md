@@ -1,6 +1,6 @@
-# OI Sandbox - Portable Open Interpreter
+# OI Sandbox - Portable Grace
 
-A fully sandboxed, portable Open Interpreter setup that can run on any system with Docker.
+A fully sandboxed, portable Grace setup that can run on any system with Docker.
 
 ## 🚀 Quick Start
 

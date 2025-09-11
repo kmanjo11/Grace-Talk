@@ -8,7 +8,13 @@ from src.utils.prompts import PROMPTS
 
 
 def init_session_states():
-
+    # Safari-specific persistence fix: Force session state initialization
+    # Safari sometimes clears session state on refresh more aggressively
+    
+    # Initialize persistent conversation tracking
+    if 'safari_conversation_id' not in st.session_state:
+        st.session_state['safari_conversation_id'] = None
+    
     if 'models' not in st.session_state:
         with open("models.json", "r") as file:
             st.session_state['models'] = json.load(file)
@@ -24,8 +30,13 @@ def init_session_states():
         st.session_state['interpreter'] = interpreter
     
     # CRITICAL: Always ensure messages list exists for conversation persistence
-    if 'messages' not in st.session_state:
+    # Safari fix: Force messages initialization even if it seems to exist
+    if 'messages' not in st.session_state or st.session_state['messages'] is None:
         st.session_state['messages'] = []
+    
+    # Safari fix: Ensure current_conversation persists
+    if 'current_conversation' not in st.session_state or st.session_state['current_conversation'] is None:
+        st.session_state['current_conversation'] = None
     
     # Load persistent API keys from environment variables
     if 'openai_key' not in st.session_state or not st.session_state['openai_key']:

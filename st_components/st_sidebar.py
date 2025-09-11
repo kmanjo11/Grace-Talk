@@ -8,6 +8,10 @@ from streamlit.components.v1 import html
 from streamlit_extras.add_vertical_space import add_vertical_space
 
 from st_components.st_conversations import conversation_navigation
+from src.utils.docker_executor import DockerCodeExecutor
+from src.utils.firejail_executor import FirejailCodeExecutor
+from src.utils.ubuntu_sandbox import UbuntuSandboxExecutor
+from src.utils.python_sandbox import RestrictedEnvironment
 
 import os
 
@@ -19,6 +23,70 @@ LOCAL_AI = 'Local LLM'
 OPEN_AI_MOCK = 'OpenAI Mock'
 
 
+def show_sandbox_status():
+    """Display sandbox environment status in a modal-like interface"""
+    st.subheader("🖥️ Sandbox Environment Status")
+    
+    # Initialize sandbox executors
+    docker_executor = DockerCodeExecutor()
+    firejail_executor = FirejailCodeExecutor()
+    ubuntu_sandbox = UbuntuSandboxExecutor()
+    python_sandbox = RestrictedEnvironment()
+    
+    # Check availability and get status
+    sandboxes = [
+        ("🐳 Docker", docker_executor),
+        ("🔥 Firejail", firejail_executor), 
+        ("🐧 Ubuntu", ubuntu_sandbox),
+        ("🐍 Python", python_sandbox)
+    ]
+    
+    st.write("**Available Execution Environments:**")
+    
+    for name, executor in sandboxes:
+        try:
+            is_available = executor.is_available()
+            status_icon = "✅" if is_available else "❌"
+            st.write(f"{status_icon} {name}: {'Available' if is_available else 'Not Available'}")
+            
+            # Show additional details if available
+            if is_available and hasattr(executor, 'get_status'):
+                try:
+                    status_info = executor.get_status()
+                    with st.expander(f"Details for {name}", expanded=False):
+                        st.json(status_info)
+                except:
+                    pass
+                    
+        except Exception as e:
+            st.write(f"❓ {name}: Error checking status ({str(e)[:50]}...)")
+    
+    # Show current preference
+    prefer_local = st.session_state.get('prefer_local_exec', False)
+    st.write(f"**Current Execution Preference:** {'Local' if prefer_local else 'Sandboxed'}")
+    
+    # Show Docker cache status
+    docker_available = st.session_state.get('docker_available', False)
+    docker_last_check = st.session_state.get('docker_last_check', 0)
+    st.write(f"**Docker Cache:** {'Available' if docker_available else 'Unavailable'} (last checked: {docker_last_check})")
+    
+    # Environment controls
+    st.write("**Environment Controls:**")
+    
+    if st.button("🔄 Refresh Status"):
+        # Clear cache to force refresh
+        if 'docker_available' in st.session_state:
+            del st.session_state['docker_available']
+        if 'docker_last_check' in st.session_state:
+            del st.session_state['docker_last_check']
+        st.rerun()
+    
+    new_prefer_local = st.checkbox("Prefer Local Execution", value=prefer_local)
+    if new_prefer_local != prefer_local:
+        st.session_state['prefer_local_exec'] = new_prefer_local
+        st.rerun()
+
+
 def st_sidebar():
     # try:
     with st.sidebar:
@@ -28,6 +96,35 @@ def st_sidebar():
         if 'show_lessons_ui' not in st.session_state:
             st.session_state['show_lessons_ui'] = False
 
+        # Sandbox Environment Status
+        with st.expander("🖥️ Environment Status", expanded=False):
+            if st.button("🔍 Show Sandbox Status", help="View current sandbox environment details"):
+                show_sandbox_status()
+            if st.button("📺 Live Sandbox View", help="Open live sandbox display window"):
+                # Open popup window instead of inline display
+                import streamlit.components.v1 as components
+                components.html("""
+                <script>
+                var popup = window.open('', 'sandbox_monitor', 'width=400,height=300,scrollbars=yes,resizable=yes');
+                popup.document.write(`
+                <html>
+                <head><title>Live Sandbox Monitor</title></head>
+                <body style="margin:0;padding:20px;font-family:monospace;background:#1e1e1e;color:#00ff00;">
+                    <h2>🖥️ Live Sandbox Monitor</h2>
+                    <div id="status">🔴 LIVE - Waiting for activity...</div>
+                    <div id="output" style="height:300px;overflow-y:scroll;border:1px solid #333;padding:10px;margin-top:10px;background:#000;"></div>
+                    <script>
+                        setInterval(() => {
+                            document.getElementById("status").innerHTML = "🔴 LIVE - " + new Date().toLocaleTimeString();
+                        }, 1000);
+                    </script>
+                </body>
+                </html>
+                `);
+                popup.document.close();
+                </script>
+                """, height=0)
+        
         with st.expander("Knowledge Augmentation", expanded=False):
             st.session_state['use_commit_lessons'] = st.checkbox(
                 'Use Commit Lessons (RAG)', value=st.session_state['use_commit_lessons'], help='Augment prompts with retrieved fix patterns behind the scenes.'

@@ -27,7 +27,7 @@ def setup_interpreter():
 
     st.session_state['interpreter'].computer.emit_images = True
     st.session_state['interpreter'].computer.offline = False  # Allow internet access
-    st.session_state['interpreter'].computer.verbose = False  # Reduce verbose output
+    st.session_state['interpreter'].computer.verbose = True  # Enable verbose output for performance logs
     
     # Integrate sandboxing for code execution (Docker -> Firejail -> Ubuntu -> Python Sandbox -> Local)
     original_run = st.session_state['interpreter'].computer.run

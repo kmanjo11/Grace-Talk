@@ -1,20 +1,15 @@
 import streamlit as st
-
 from st_components.st_interpreter import setup_interpreter
-# Lessons retrieval (semantic RAG)
-from src.utils.lessons_retriever import retrieve, ensure_index_built
+from src.data.database import save_chat
+from src.data.models import Chat
+from src.utils.message_processor import message_processor
+from src.utils.internal_task_tracker import internal_tracker
 # Database
 from src.data.database import save_chat, save_lesson
 # Message processor for consistency
 from src.utils.message_processor import message_processor
 import uuid
 import re
-from src.data.models import Chat
-
-# Image
-from PIL import Image
-from io import BytesIO
-import base64
 from src.utils.pdf_parser import parse_pdf_text
 from src.utils.pdf_retriever import ensure_pdf_index_built, retrieve_pdf_sections
 from src.utils.docker_executor import DockerCodeExecutor
@@ -23,11 +18,22 @@ from src.utils.docker_executor import DockerCodeExecutor
 def chat_with_interpreter():
 
     # GENERATE MESSAGES
-    if prompt := st.chat_input(placeholder="Write here your message", disabled=not st.session_state['chat_ready']):
+    if prompt := st.chat_input(placeholder="What's up?", disabled=not st.session_state['chat_ready']):
 
         setup_interpreter()
 
-        handle_user_message(prompt)
+        # Display user message
+        with st.chat_message("user"):
+            st.markdown(f'<p>{prompt}</p>', True)
+
+        # Internal task management (hidden from user)
+        task_id = internal_tracker.auto_manage_task(prompt)
+
+        # Add user message to session state
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        user_chat = Chat(
+            st.session_state['current_conversation']["id"], "user", prompt)
+        save_chat(user_chat)
 
         handle_assistant_response(prompt)
 
@@ -190,16 +196,10 @@ def handle_assistant_response(prompt):
         full_response = ""
         message_placeholder = st.empty()
 
-        # Check for simple greeting
+        # Skip auto-greeting - let conversation flow naturally
         if message_processor.is_simple_greeting(prompt):
-            reply = message_processor.get_greeting_response()
-            message_placeholder.markdown(reply)
-            st.session_state.messages.append({"role": "assistant", "content": reply})
-            assistant_chat = Chat(
-                st.session_state['current_conversation']["id"], "assistant", reply
-            )
-            save_chat(assistant_chat)
-            return
+            # Don't return early, let it go through normal processing
+            pass
 
         # Intent: explicit sandbox creation/health check
         pl = (prompt or "").strip().lower()

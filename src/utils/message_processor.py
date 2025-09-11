@@ -28,6 +28,11 @@ class MessageProcessor:
             r"I apologize for",
             r"Sorry for the",
             r"I'm sorry",
+            r"Plan Recap:",
+            r"I will now check",
+            r"Let's proceed with verifying",
+            r"I believe you",
+            r"The previous attempt.*did not work",
         ]
         
         self.thought_patterns = [
@@ -106,10 +111,52 @@ class MessageProcessor:
         # Filtering will be applied to the final complete response
         return chunk
 
+    def detect_repetitive_response(self, response: str) -> bool:
+        """Detect if response contains repetitive loops or plan recaps"""
+        if not response:
+            return False
+            
+        # Check for repetitive patterns
+        lines = response.split('\n')
+        repetitive_indicators = [
+            'plan recap',
+            'i will now check',
+            'let\'s proceed with verifying',
+            'the previous attempt',
+            'we need to verify',
+            'i believe you'
+        ]
+        
+        repetitive_count = 0
+        for line in lines:
+            line_lower = line.lower().strip()
+            if any(indicator in line_lower for indicator in repetitive_indicators):
+                repetitive_count += 1
+        
+        # If more than 2 repetitive lines, likely a loop
+        return repetitive_count > 2
+
     def format_final_response(self, response: str) -> str:
         """Format the final response for consistency with guaranteed proper word spacing"""
         if not response:
             return response
+        
+        # Check for repetitive loops and truncate if detected
+        if self.detect_repetitive_response(response):
+            # Find first occurrence of repetitive pattern and cut there
+            lines = response.split('\n')
+            truncated_lines = []
+            
+            for line in lines:
+                line_lower = line.lower().strip()
+                # Stop at first repetitive pattern
+                if any(pattern in line_lower for pattern in ['plan recap', 'i will now check', 'let\'s proceed']):
+                    break
+                truncated_lines.append(line)
+            
+            response = '\n'.join(truncated_lines).strip()
+            if response and not response.endswith(('.', '!', '?')):
+                response += '.'
         
         # Apply all filters
         response = self.filter_verbose_language(response)
@@ -150,7 +197,7 @@ class MessageProcessor:
 
     def get_greeting_response(self) -> str:
         """Get a simple greeting response"""
-        return "Hi! How can I help?"
+        return ""  # No auto greeting - let conversation flow naturally
 
     def should_use_augmentation(self, prompt: str) -> bool:
         """Determine if context augmentation should be used"""
@@ -171,10 +218,13 @@ class MessageProcessor:
         guidelines = [
             "- Respond naturally and conversationally",
             "- Do NOT restate or recap the user's message",
-            "- Do NOT use templates or rigid structures",
+            "- Do NOT use templates or rigid structures", 
             "- Keep responses concise and on-topic",
             "- Do NOT apologize unless specifically asked",
             "- Do NOT include filler phrases or meta commentary",
+            "- NEVER use 'Plan Recap' or repetitive verification loops",
+            "- Do NOT repeat the same information multiple times",
+            "- Stop generating when the answer is complete",
         ]
         
         if self.is_concise_mode():
