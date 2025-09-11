@@ -34,6 +34,10 @@ class UbuntuSandboxExecutor:
         self.sandbox_user = "nobody"
         self.sandbox_group = "nogroup"
         
+        # Port forwarding capabilities
+        self.forwarded_ports = {}
+        self.port_forward_processes = {}
+        
     def is_available(self) -> bool:
         """Check if Ubuntu sandbox can be created"""
         try:
@@ -292,6 +296,10 @@ class UbuntuSandboxExecutor:
     
     def cleanup(self):
         """Clean up sandbox resources"""
+        # Stop all port forwarding
+        for sandbox_port in list(self.port_forward_processes.keys()):
+            self.stop_port_forwarding(sandbox_port)
+            
         try:
             if os.path.exists(self.sandbox_root):
                 shutil.rmtree(self.sandbox_root, ignore_errors=True)
@@ -308,4 +316,129 @@ class UbuntuSandboxExecutor:
             "max_memory_mb": self.max_memory // (1024 * 1024),
             "sandbox_root": self.sandbox_root
         }
+    
+    def _detect_web_services(self, output: str):
+        """Detect web services starting from output"""
+        import re
+        import streamlit as st
+        
+        # Common patterns for web service startup
+        patterns = [
+            (r'Running on http://[^:]+:(\d+)', 'flask'),
+            (r'serving at http://[^:]+:(\d+)', 'http_server'),
+            (r'Local:\s+http://[^:]+:(\d+)', 'react'),
+            (r'localhost:(\d+)', 'generic'),
+            (r'port\s+(\d+)', 'generic')
+        ]
+        
+        for pattern, service_type in patterns:
+            matches = re.findall(pattern, output, re.IGNORECASE)
+            for match in matches:
+                port = int(match)
+                if port not in self.forwarded_ports:
+                    self._setup_port_forwarding(port, service_type)
+    
+    def _setup_port_forwarding(self, sandbox_port: int, service_type: str = "generic"):
+        """Set up port forwarding from sandbox to host"""
+        import socket
+        import streamlit as st
+        
+        try:
+            # Find available host port
+            host_port = self._find_available_port(sandbox_port)
+            
+            if host_port:
+                # Use socat for port forwarding if available
+                if shutil.which('socat'):
+                    cmd = [
+                        'socat', 
+                        f'TCP-LISTEN:{host_port},fork,reuseaddr',
+                        f'TCP:localhost:{sandbox_port}'
+                    ]
+                    
+                    # Start port forwarding process
+                    process = subprocess.Popen(
+                        cmd,
+                        stdout=subprocess.PIPE,
+                        stderr=subprocess.PIPE
+                    )
+                    
+                    self.port_forward_processes[sandbox_port] = process
+                    self.forwarded_ports[sandbox_port] = {
+                        'host_port': host_port,
+                        'service_type': service_type,
+                        'status': 'active',
+                        'process': process
+                    }
+                    
+                    # Notify live sandbox display
+                    if 'live_sandbox_display' in st.session_state:
+                        display = st.session_state['live_sandbox_display']
+                        display.add_output(
+                            f"Port forwarding: {sandbox_port} -> {host_port} ({service_type})",
+                            "ubuntu"
+                        )
+                    
+                    return host_port
+                else:
+                    # Fallback: just track the port without forwarding
+                    self.forwarded_ports[sandbox_port] = {
+                        'host_port': sandbox_port,
+                        'service_type': service_type,
+                        'status': 'direct',
+                        'process': None
+                    }
+                    return sandbox_port
+                    
+        except Exception as e:
+            if 'live_sandbox_display' in st.session_state:
+                display = st.session_state['live_sandbox_display']
+                display.add_output(f"Port forwarding failed: {e}", "ubuntu")
+        
+        return None
+    
+    def _find_available_port(self, preferred_port: int) -> Optional[int]:
+        """Find an available port, preferring the original port"""
+        import socket
+        
+        ports_to_try = [preferred_port] + list(range(8000, 8100))
+        
+        for port in ports_to_try:
+            try:
+                sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                sock.bind(('localhost', port))
+                sock.close()
+                return port
+            except OSError:
+                continue
+        
+        return None
+    
+    def get_forwarded_ports(self) -> Dict:
+        """Get all forwarded ports"""
+        return self.forwarded_ports
+    
+    def stop_port_forwarding(self, sandbox_port: int):
+        """Stop port forwarding for a specific port"""
+        if sandbox_port in self.port_forward_processes:
+            process = self.port_forward_processes[sandbox_port]
+            if process:
+                process.terminate()
+                try:
+                    process.wait(timeout=5)
+                except subprocess.TimeoutExpired:
+                    process.kill()
+            
+            del self.port_forward_processes[sandbox_port]
+            if sandbox_port in self.forwarded_ports:
+                del self.forwarded_ports[sandbox_port]
+    
+    def execute_code_with_monitoring(self, code: str, language: str = "python") -> str:
+        """Execute code with web service monitoring"""
+        result = self.execute_code(code, language)
+        
+        # Check output for web services
+        self._detect_web_services(result)
+        
+        return result
 

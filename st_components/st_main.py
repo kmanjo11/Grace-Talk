@@ -25,22 +25,35 @@ def st_main():
             init_conversations()
             create_or_get_current_conversation()
             
-            # Display messages
+            # Fixed top panels - always visible at top
+            render_fixed_top_panels()
+            
+            # Display messages in clean flow
             render_messages()
             
-            # Additional panels
-            with st.expander("P6 Schedule Review Setup", expanded=False):
-                p6_panel()
-
-            # Code Search (grep) panel (optional)
-            with st.expander("Code Search (grep)", expanded=False):
-                grep_panel()
-            
-            # Chat input (moved back below panels)
+            # Chat input at bottom
             chat_with_interpreter()
     
     # except Exception as e:
     #     st.error(e)
+
+def render_fixed_top_panels():
+    """
+    Render fixed top panels that don't interfere with chat flow
+    """
+    # Create two columns for the panels
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        with st.expander("P6 Schedule Review Setup", expanded=False):
+            p6_panel()
+    
+    with col2:
+        with st.expander("Code Search (grep)", expanded=False):
+            grep_panel()
+    
+    # Add separator line
+    st.divider()
 
 def create_or_get_current_conversation():
     """
